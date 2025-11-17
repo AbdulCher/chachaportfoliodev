@@ -7,8 +7,8 @@ const Header = () => {
         <div className="text-xl font-bold">Mon Portfolio</div>
         <ul className="flex space-x-6">
           <li><a href="#accueil" className="hover:text-blue-500">Accueil</a></li>
-          <li><a href="#portfolio" className="hover:text-blue-500">Portfolio</a></li>
           <li><a href="#apropos" className="hover:text-blue-500">À propos</a></li>
+          <li><a href="#projets" className="hover:text-blue-500">Projets</a></li>
           <li><a href="#contact" className="hover:text-blue-500">Contact</a></li>
         </ul>
       </nav>
