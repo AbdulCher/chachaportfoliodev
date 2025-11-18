@@ -8,8 +8,8 @@ export default function ProjectCard({
   results
 }) {
   return (
-    <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition p-4">
-      <img src={image} alt={title} className="w-full h-48 object-cover rounded-lg" />
+    <article className="bg-white rounded-xl overflow-hidden hover:shadow-xl transition p-4 shadow-lg shadow-indigo-500/50 ...">
+      <img src={image} alt={title} className="w-full h-80 object-cover rounded-lg" />
 
       <div className="mt-4">
         <h3 className="text-xl font-semibold">{title}</h3>

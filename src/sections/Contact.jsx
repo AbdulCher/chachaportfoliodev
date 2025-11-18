@@ -1,3 +1,4 @@
+import ParticleBackground from "../components/ParticleBackground";
 export default function Contact() {
   return (
     <section

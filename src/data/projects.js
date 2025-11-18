@@ -5,7 +5,7 @@ const projects = [
     description:
       "Création d’un site de planification de vacances dynamique à partir d’une maquette Figma. Intégration responsive complète en HTML et CSS.",
     stack: ["HTML", "CSS", "Figma"],
-    image: "/assets/booki.png",
+    image: "/img/booki.png",
     context:
       "Projet d’apprentissage centré sur la structuration du code HTML et la mise en page responsive.",
     objectives:
