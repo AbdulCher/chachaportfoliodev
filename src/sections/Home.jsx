@@ -1,50 +1,48 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Projects from "./Works";
-
 
 const transition = {
   duration: 0.8,
   delay: 0.5,
   ease: [0, 0.71, 0.2, 1.01],
-}
-function Home() {
+};
+
+export default function Home() {
   return (
-    <div className="scroll-smooth snap-y snap-mandatory h-screen overflow-scroll">
-
-
-      <section id="accueil" className="snap-start h-screen bg-gray-900 flex items-center justify-between p-6 lg:px-8">
-        
-        <motion.div animate={{ x: 100 }} transition={transition}>
-          <h1 className="text-5xl text-white animate-bounceScale">NDIAYE<br></br>CHEIKH<br></br>ABDUL</h1>
-        </motion.div>
-        <div className=" text-white flex items-start justify-start ">
-            <h2 className="text-8xl flex items-start absolute start-30 top-30">Intégrateur web<br></br></h2>
-        </div>
-        <motion.div animate={{ x: -100 }} transition={transition}>
-          <img className="h-60 w-60 object-cover rounded-full ..." src="/img/profile.jpg" />
-        </motion.div>
-
-      </section>
-
-      
-
-      <section
-        id="projets"
-        className="snap-start h-screen bg-purple-950 flex items-center justify-center"
+    <section
+      id="accueil"
+      className="snap-start h-screen bg-gray-900 flex flex-col lg:flex-row items-center justify-between p-6 lg:px-16 relative"
+    >
+      {/* Texte principal animé */}
+      <motion.div
+        className="mb-6 lg:mb-0"
+        animate={{ x: 100 }}
+        transition={transition}
       >
+        <h1 className="text-5xl text-white leading-tight">
+          NNNNNN<br />
+          NNNNN<br />
+          NNNNN
+        </h1>
+      </motion.div>
 
-      <Projects />
-      </section>
-
-      <section
-        id="contact"
-        className="snap-start h-screen bg-orange-500 flex items-center justify-center"
+      {/* Image animée */}
+      <motion.div
+        className="mb-6 lg:mb-0"
+        animate={{ x: -100 }}
+        transition={transition}
       >
-        <h1 className="text-5xl text-white">Contact</h1>
-      </section>
-    </div>
+        <img
+          src="/img/profile.jpg"
+          alt="Profil"
+          className="h-60 w-60 object-cover rounded-full"
+        />
+      </motion.div>
+
+      {/* Texte secondaire */}
+      <div className="absolute top-10 left-10 text-white">
+        <h2 className="text-6xl lg:text-8xl font-bold">Intégrateur web</h2>
+      </div>
+    </section>
   );
 }
-
-export default Home;

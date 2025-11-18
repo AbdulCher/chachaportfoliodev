@@ -9,6 +9,7 @@ const Header = () => {
           <li><a href="#accueil" className="hover:text-blue-500">Accueil</a></li>
           <li><a href="#apropos" className="hover:text-blue-500">À propos</a></li>
           <li><a href="#projets" className="hover:text-blue-500">Projets</a></li>
+          <li><a href="#competences" className="hover:text-blue-500">Compétences</a></li>
           <li><a href="#contact" className="hover:text-blue-500">Contact</a></li>
         </ul>
       </nav>
