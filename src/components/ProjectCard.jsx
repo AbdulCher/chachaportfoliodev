@@ -1,6 +1,6 @@
 export default function ProjectCard({ title, description, image, stack, github, demo }) {
   return (
-    <article className="group bg-[#112840] border-2 text-gray-300 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#1F6692]/40 transition-all duration-300 overflow-hidden border border-[#1F6692]/20">
+    <article className="group bg-gray/10 text-[#0D141F] rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#87a330] transition-all duration-300 overflow-hidden border border-[#1F6692]/20">
 
       {/* Image */}
       <div className="overflow-hidden">
@@ -14,11 +14,11 @@ export default function ProjectCard({ title, description, image, stack, github, 
       {/* Content */}
       <div className="p-5 space-y-4">
         
-        <h3 className="text-xl font-bold text-gray-200 group-hover:text-[#75C7F0] transition">
+        <h3 className="text-xl font-bold text-[#0D141F] group-hover:text-[#87a330] transition">
           {title}
         </h3>
 
-        <p className="text-gray-400 text-sm leading-relaxed">
+        <p className="text-[#0D141F] text-sm leading-relaxed">
           {description}
         </p>
 
@@ -27,7 +27,7 @@ export default function ProjectCard({ title, description, image, stack, github, 
           {stack.map((tech, index) => (
             <li
               key={index}
-              className="px-2 py-1 text-xs bg-[#111A27] border border-[#1F6692]/40 rounded-full text-gray-300"
+              className="px-2 py-1 text-xs bg-[#87a330] border border-[#1F6692]/40 rounded-full text-gray-300"
             >
               {tech}
             </li>
@@ -41,7 +41,7 @@ export default function ProjectCard({ title, description, image, stack, github, 
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm px-4 py-2 rounded-lg bg-[#112840] text-white hover:bg-[#75C7F0] transition"
+              className="text-sm px-4 py-2 rounded-lg bg-[#80aae1] text-white hover:bg-[#75C7F0] transition"
             >
               GitHub
             </a>
@@ -52,7 +52,7 @@ export default function ProjectCard({ title, description, image, stack, github, 
               href={demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm px-4 py-2 rounded-lg bg-white text-[#0D141F] hover:bg-gray-200 transition"
+              className="text-sm px-4 py-2 rounded-lg bg-[#80aae1] text-white hover:bg-gray-200 transition"
             >
               Demo
             </a>

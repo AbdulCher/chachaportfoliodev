@@ -6,16 +6,16 @@ export default function Works() {
     <section
       id="projets"
       className="snap-start min-h-screen w-full py-20 px-6 lg:px-20
-        bg-gradient-to-b from-[#0D141F] via-[#111A27] to-[#112840]
+        bg-gray-/10
         flex flex-col items-center"
     >
       {/* Titre */}
-      <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-300 text-center">
+      <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#0D141F] text-center">
         Mes Projets
       </h2>
 
       {/* Description */}
-      <p className="text-gray-300 mb-12 text-center lg:text-center max-w-3xl text-lg lg:text-xl">
+      <p className="text-[#0D141F] mb-12 text-center lg:text-center max-w-3xl text-lg lg:text-xl">
         Découvrez mes principales réalisations en développement web. Chaque projet montre mon travail sur HTML, CSS, JavaScript et React.
       </p>
 

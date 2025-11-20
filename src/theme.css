@@ -1,0 +1,25 @@
+/* Variables par défaut (light) */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --primary: #2563eb;
+}
+
+/* Dark */
+.dark {
+  --bg: #0f0f0f;
+  --text: #f1f1f1;
+  --primary: #3b82f6;
+}
+
+/* Purple */
+.purple {
+  --bg: #1a0b2e;
+  --text: #e9d8fd;
+  --primary: #a855f7;
+}
+
+/* transition douce */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
