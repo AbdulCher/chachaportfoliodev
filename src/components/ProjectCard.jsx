@@ -1,42 +1,62 @@
-export default function ProjectCard({
-  title,
-  description,
-  image,
-  stack,
-  context,
-  objectives,
-  results
-}) {
+export default function ProjectCard({ title, description, image, stack, github, demo }) {
   return (
-    <article className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition p-4 shadow-lg shadow-indigo-500/50 ...">
-      <img src={image} alt={title} className="w-full h-80 object-cover rounded-lg" />
+    <article className="group bg-[#112840] border-2 text-gray-300 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#1F6692]/40 transition-all duration-300 overflow-hidden border border-[#1F6692]/20">
 
-      <div className="mt-4">
-        <h3 className="text-xl font-semibold">{title}</h3>
+      {/* Image */}
+      <div className="overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105 border-2 border[#0D141F]"
+        />
+      </div>
 
-        <p className="text-gray-600 mt-2">{description}</p>
+      {/* Content */}
+      <div className="p-5 space-y-4">
+        
+        <h3 className="text-xl font-bold text-gray-200 group-hover:text-[#75C7F0] transition">
+          {title}
+        </h3>
 
-        <ul className="flex flex-wrap gap-2 mt-4">
+        <p className="text-gray-400 text-sm leading-relaxed">
+          {description}
+        </p>
+
+        {/* Stack */}
+        <ul className="flex flex-wrap gap-2">
           {stack.map((tech, index) => (
             <li
               key={index}
-              className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700"
+              className="px-2 py-1 text-xs bg-[#111A27] border border-[#1F6692]/40 rounded-full text-gray-300"
             >
               {tech}
             </li>
           ))}
         </ul>
 
-        <div className="mt-4 text-sm text-gray-700 space-y-2">
-          <p>
-            <strong>Contexte :</strong> {context}
-          </p>
-          <p>
-            <strong>Objectifs :</strong> {objectives}
-          </p>
-          <p>
-            <strong>Résultats :</strong> {results}
-          </p>
+        {/* Buttons */}
+        <div className="flex gap-3 pt-2">
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm px-4 py-2 rounded-lg bg-[#112840] text-white hover:bg-[#75C7F0] transition"
+            >
+              GitHub
+            </a>
+          )}
+
+          {demo && (
+            <a
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm px-4 py-2 rounded-lg bg-white text-[#0D141F] hover:bg-gray-200 transition"
+            >
+              Demo
+            </a>
+          )}
         </div>
       </div>
     </article>

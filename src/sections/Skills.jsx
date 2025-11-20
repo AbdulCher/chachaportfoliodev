@@ -30,7 +30,7 @@ export default function Skills() {
   return (
     <section
       id="competences"
-      className="snap-start h-screen w-full bg-gray-900 flex flex-col items-center justify-center p-6 lg:px-16 text-white"
+      className="snap-start h-screen w-full bg-gradient-to-b from-[#0D141F] via-[#111A27] to-[#1F6692] flex flex-col items-center justify-center p-6 lg:px-16 text-white"
     >
       <h2 className="text-3xl font-bold mb-10">Compétences</h2>
 
