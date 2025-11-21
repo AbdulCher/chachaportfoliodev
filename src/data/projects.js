@@ -15,7 +15,7 @@ const projects = [
     description:
       "Développement d’un portfolio d’architecte avec gestion dynamique des galeries et modales via JavaScript.",
     stack: ["HTML", "CSS", "JavaScript"],
-    image: "/img/sophie.png",
+    image: "/img/mockup/sophiemock.png",
     github: "https://github.com/tonrepo/sophiebluel",
     demo: "https://sophiebluel-demo.com",
   },

@@ -22,9 +22,9 @@ export default function About() {
         <AnimatedCard direction="right" delay={0.20}>
         <div className="text-[#023047] rounded-lg hover:shadow-xl transition p-4 shadow-lg shadow-[#fb8500] flex flex-col items-center">
           <img 
-            src="/img/bookitop.png"
+            src="/img/cards/homebooki.png"
             alt="Projet Booki"
-            className="w-full h-40 object-cover rounded-md mb-2"
+            className="w-full h-45 object-cover rounded-md mb-2"
           />
             
           <p className="text-center text-sm">
@@ -35,9 +35,9 @@ export default function About() {
       <AnimatedCard direction="up" delay={0.3}>
         <div className="text-[#023047] rounded-lg overflow-hidden hover:shadow-xl transition p-4 shadow-lg shadow-[#fb8500] flex flex-col items-center">
           <img
-            src="/img/homesophie.png"
+            src="/img/cards/homesophie.png"
             alt="Portfolio Sophie Bluel"
-            className="w-full h-40 object-cover rounded-md mb-2"
+            className="w-full h-45 object-cover rounded-md mb-2"
           />
           <p className="text-center text-sm">
             Sophie Bluel<br />JavaScript dynamique
@@ -47,9 +47,9 @@ export default function About() {
       <AnimatedCard direction="left" delay={0.20}>
         <div className="text-[##023047] rounded-lg hover:shadow-xl transition p-4 shadow-lg shadow-[#fb8500] flex flex-col items-center">
           <img
-            src="/img/Kasalogement.png"
+            src="/img/cards/homekasa.png"
             alt="Projet Kasa"
-            className="w-full h-40 object-cover rounded-md mb-2"
+            className="w-full h-45 object-cover rounded-md mb-2"
           />
           <p className="text-center text-sm">
             Kasa<br />Application React complète
