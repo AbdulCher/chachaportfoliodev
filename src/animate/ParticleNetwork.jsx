@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-export default function ParticleNetwork({ width = 1200, height = 600, numPoints = 50 }) {
+export default function ParticleNetwork({ width = 1200, height = 600, numPoints = 6 }) {
   const canvasRef = useRef(null);
   const points = useRef([]);
 
@@ -27,8 +27,8 @@ export default function ParticleNetwork({ width = 1200, height = 600, numPoints 
           const dx = points.current[i].x - points.current[j].x;
           const dy = points.current[i].y - points.current[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 300) { // distance pour connecter les points
-            ctx.strokeStyle = `rgba(142, 202, 230, ${1 - dist / 300})`; // bleu doux, plus clair si proche
+          if (dist < 800) { // distance pour connecter les points
+            ctx.strokeStyle = `rgba(142, 202, 230, ${1 - dist / 800})`; // bleu doux, plus clair si proche
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(points.current[i].x, points.current[i].y);
@@ -40,7 +40,7 @@ export default function ParticleNetwork({ width = 1200, height = 600, numPoints 
 
       // Dessine les points
       points.current.forEach((p) => {
-        ctx.fillStyle = "#fb8500"; // couleur bleu doux
+        ctx.fillStyle = "#8ecae6"; // couleur bleu doux
         ctx.beginPath();
         ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
         ctx.fill();
