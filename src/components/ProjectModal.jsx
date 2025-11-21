@@ -1,6 +1,7 @@
 import React from "react";
 
 
+
 export default function ProjectModal({ project, onClose }) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
@@ -11,8 +12,12 @@ export default function ProjectModal({ project, onClose }) {
         >
           &times;
         </button>
-
-        <h2 className="text-2xl font-bold text-white mb-2">{project.title}</h2>
+        <img
+          src={project.modalimg}
+          alt={project.title}
+          className="w-full h-48 object-cover rounded-md mb-4"
+        />
+        <h2 className="text-4xl font-bold text-white mb-2">{project.title}</h2>
         <p className="text-gray-300 mb-4">{project.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">

@@ -24,7 +24,7 @@ export default function About() {
           <img 
             src="/img/cards/homebooki.png"
             alt="Projet Booki"
-            className="w-full h-45 object-cover rounded-md mb-2"
+            className="w-full h-40 object-cover rounded-md mb-2"
           />
             
           <p className="text-center text-sm">
@@ -37,7 +37,7 @@ export default function About() {
           <img
             src="/img/cards/homesophie.png"
             alt="Portfolio Sophie Bluel"
-            className="w-full h-45 object-cover rounded-md mb-2"
+            className="w-full h-40 object-cover rounded-md mb-2"
           />
           <p className="text-center text-sm">
             Sophie Bluel<br />JavaScript dynamique
@@ -49,7 +49,7 @@ export default function About() {
           <img
             src="/img/cards/homekasa.png"
             alt="Projet Kasa"
-            className="w-full h-45 object-cover rounded-md mb-2"
+            className="w-full h-40 object-cover rounded-md mb-2"
           />
           <p className="text-center text-sm">
             Kasa<br />Application React complète

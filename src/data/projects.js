@@ -5,7 +5,8 @@ const projects = [
     description:
       "Création d’un site de planification de vacances dynamique à partir d’une maquette Figma. Intégration responsive complète en HTML et CSS.",
     stack: ["HTML", "CSS", "Figma"],
-    image: "/img/booki.png",
+    image: "/img/mockup/bookimock.png",
+    modalimg: "/img/booki.png",
     github: "https://github.com/tonrepo/booki",
     demo: "https://booki-demo.com",
   },
@@ -25,7 +26,7 @@ const projects = [
     description:
       "Refonte complète d’un site de location immobilière en React. Création de composants, routage et gestion de données JSON.",
     stack: ["React", "Vite", "CSS Modules"],
-    image: "/img/kasa.png",
+    image: "/img/mockup/kasamocki.png",
     github: "https://github.com/tonrepo/kasa",
     demo: "https://kasa-demo.com",
   },

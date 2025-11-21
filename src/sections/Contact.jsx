@@ -3,7 +3,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="snap-start h-screen w-full bg-gradient-to-b from-[#1F6692] via-[#111A27] to-[#0D141F] flex flex-col items-center justify-center p-6 lg:px-16"
+      className="snap-start h-screen w-full flex flex-col items-center justify-center p-6 lg:px-16"
     >
       <h1 className="text-5xl font-bold text-gray-300 mb-6">Contact</h1>
       <p className="text-gray-300 mb-6 text-center max-w-2xl">
