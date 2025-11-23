@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
-import SpinningCube from "../components/SpinningCube";
+import SpinningCube from "../animate/SpinningCube";
 import AnimatedText from "../animate/AnimatedText";
 import ParticleNetwork from "../animate/ParticleNetwork";
 
@@ -47,7 +47,7 @@ export default function Home() {
             />
           </motion.h2>
 
-          <motion.p className="px-2 text-[#fb8500] text-lg lg:text-xl leading-relaxed max-w-2xl">
+          <motion.p className="px-2 text-[#fb8500] bg-[#023047]/40 text-lg lg:text-xl leading-relaxed max-w-2xl">
             Je transforme des maquettes Figma en sites web modernes et responsives.
             Curieux et rigoureux, j’aime relever des défis techniques et concevoir
             des interfaces élégantes et fonctionnelles.
@@ -70,7 +70,7 @@ export default function Home() {
 
         {/* Boutons */}
 
-      <div className="flex flex-row gap-4 mt-6 justify-center">
+      <div className="bg-[#023047] flex flex-row gap-4 mt-6 justify-center">
         <a href="#projets" className="bg-[#8ecae6] px-6 py-2 text-[#023047] rounded hover:bg-[#ffb703] transition">
           GitHub
         </a>
@@ -84,7 +84,7 @@ export default function Home() {
 
           {/* Cube */}
       <div className="w-full flex justify-center mt-8 lg:mt-12" style={{ height: "300px" }}>
-        <SpinningCube />
+        <SpinningCube size={100} />
       </div>
 
           {/* Deplacer cube au centre 

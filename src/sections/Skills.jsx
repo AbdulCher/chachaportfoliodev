@@ -1,69 +1,121 @@
-import { useState, useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 import ParticleNetwork from "../animate/ParticleNetwork";
-
+import SpinningCube from "../animate/SpinningCube";
 
 export default function Skills() {
-  const skills = [
-    { name: "HTML", logo: "/assets/icons/html5.svg" },
-    { name: "CSS", logo: "/assets/icons/css.svg" },
-    { name: "JavaScript", logo: "/assets/icons/javascript.svg" },
-    { name: "React", logo: "/assets/icons/react.svg" },
-    { name: "Vite", logo: "/assets/icons/vite.svg" },
-    { name: "Sass", logo: "/assets/icons/sass.svg" },
-    { name: "Bootstrap", logo: "/assets/icons/bootstrap.svg" },
-    { name: "Figma", logo: "/assets/icons/figma.svg" },
-    { name: "Git", logo: "/assets/icons/git.svg" },
-  ];
-
-  const [currentSkill, setCurrentSkill] = useState("");
-  const [pulse, setPulse] = useState(false);
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
 
   useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setCurrentSkill(skills[i].name);
-      setPulse(true);
-      setTimeout(() => setPulse(false), 400);
-      i = (i + 1) % skills.length;
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [skills]);
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden"); // reset pour rejouer l'animation
+    }
+  }, [isInView, controls]);
+
+  // 🎨 LES DONNÉES STRUCTURÉES
+  const skills = {
+    Outils: [
+      { name: "Figma", icon: "/img/icons/figma.svg", },
+      { name: "VS Code", icon: "/img/icons/vscode.svg" },
+      { name: "Git & GitHub", icon: "/img/icons/github.svg" },
+    ],
+
+    Langages: [
+      { name: "React.js", icon: "/img/icons/react.svg", color: "#61DAFB" },
+      { name: "HTML5", icon: "/img/icons/html5.svg", color: "#fffff" },
+      { name: "JavaScript (ES6+)", icon: "/img/icons/javascript.svg", color: "#F7DF1E" },
+      { name: "CSS3", icon: "/img/icons/css3.svg" },
+    ],
+
+    Frameworks: [
+      { name: "Tailwind CSS", icon: "/img/icons/tailwindcss.svg", color: "#38BDF8" },
+      { name: "Bootstrap", icon: "/img/icons/bootstrap.svg", color: "#7952B3" },
+      { name: "Framer Motion", icon: "/img/icons/framer.svg", color: "#0055FF" },
+    ],
+  };
+
+  // 🎬 Animation éléments (icône + texte)
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.25,
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    }),
+  };
+
+  // 🎬 Animation icônes
+  const logoVariants = {
+    hidden: { opacity: 0, scale: 0.3 },
+    visible: (i) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: i * 0.25,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
 
   return (
     <section
       id="competences"
+      ref={ref}
       className="relative snap-start w-full bg-[#023047] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
     >
       <ParticleNetwork />
-      <h2 className="text-3xl font-bold mb-10">Compétences</h2>
 
-      <div className="relative flex items-center justify-center">
-        {/* Cercle des compétences */}
-        <div className="relative w-72 h-72 rounded-full border-2 border-gray-500 flex items-center justify-center">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className={`absolute w-12 h-12 rounded-full flex items-center justify-center transform rotate-${index * 40}`}
-              title={skill.name}
-              style={{
-                transform: `rotate(${index * (360 / skills.length)}deg) translate(120px) rotate(-${
-                  index * (360 / skills.length)
-                }deg)`,
-              }}
-            >
-              <img src={skill.logo} alt={skill.name} className="w-10 h-10" />
-            </div>
-          ))}
+      <h2 className="text-3xl text-[#fb8500] font-bold mb-10">Compétences</h2>
 
-          <div
-            className={`absolute w-4 h-4 bg-blue-500 rounded-full ${
-              pulse ? "animate-pulse" : ""
-            }`}
-          ></div>
+      <div className="relative w-full max-w-6xl grid gap-12 sm:grid-cols-1 lg:grid-cols-3 text-center">
+        {Object.entries(skills).map(([category, items], idx) => (
+          <div key={idx} className="flex flex-col items-center text-white">
+            <h3 className="text-2xl font-semibold mb-6">{category}</h3>
 
-          <div className="absolute bottom-0 text-xl font-semibold">{currentSkill}</div>
-        </div>
+            <ul className="space-y-6">
+              {items.map((item, i) => (
+                <motion.li
+                  key={i}
+                  custom={i}
+                  variants={itemVariants}
+                  initial="hidden"
+                  animate={controls}
+                  className="flex items-center justify-center space-x-4"
+                >
+                  {/* LOGO */}
+                  <motion.img
+                    custom={i}
+                    variants={logoVariants}
+                    src={item.icon}
+                    
+                    className="w-10 h-10" b
+                    alt={item.name}
+                  />
+
+                  {/* NOM */}
+                  <motion.span
+                    custom={i}
+                    variants={itemVariants}
+                    className="text-lg text-white"
+                  >
+                    {item.name}
+                  </motion.span>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
+      <SpinningCube size={5} />
     </section>
   );
 }
