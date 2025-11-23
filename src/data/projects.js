@@ -38,7 +38,7 @@ const projects = [
     description:
       "Refonte complète d’un site de location immobilière en React. Création de composants, routage et gestion de données JSON.",
     stack: ["Hâte de collaborer avec vous !"],
-    image: "/img/cards/homea.png",
+    image: "/img/cards/votreprojet.png",
     github: "https://github.com/tonrepo/kasa",
     demo: "https://kasa-demo.com",
   },

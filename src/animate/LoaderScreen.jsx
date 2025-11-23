@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 export default function LoaderScreen({ onFinish }) {
   const sequence = [
-    { text: "Rigueur", class: "text-[#8ecae6] font-bold text-6xl" },
-    { text: "Sérieux", class: "text-[#8ecae6] font-bold text-7xl" },
-    { text: "Qualité", class: "text-[#8ecae6] font-bold text-9xl" },
+    { text: "...Curieux", class: "text-[#8ecae6] font-bold text-4xl" },
+    { text: "...Créatif", class: "text-[#8ecae6] font-bold text-5xl" },
+    { text: "Professionel !", class: "text-[#8ecae6] font-bold text-7xl" },
   ];
 
   const [step, setStep] = useState(0); // gère le mot affiché
@@ -24,8 +24,8 @@ export default function LoaderScreen({ onFinish }) {
           // Fade-out + fin animation
           setTimeout(() => {
             setFadeOut(true);
-            setTimeout(onFinish, 1000);
-          }, 1600);
+            setTimeout(onFinish, 400);
+          }, 800);
 
           return s;
         }
@@ -39,7 +39,7 @@ export default function LoaderScreen({ onFinish }) {
   return (
     <div
       className={`fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-[9999] transition-opacity duration-700 ${
-        fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
+        fadeOut ? "opacity-50 pointer-events-none" : "opacity-100"
       }`}
     >
       {/* Logo */}
@@ -60,7 +60,7 @@ export default function LoaderScreen({ onFinish }) {
       </div>
 
       {/* Spinner */}
-      <div className="mt-8 w-12 h-12 border-4 border-[#8ecae6] border-t-[#c1121f] rounded-full animate-spin"></div>
+      <div className="mt-8 w-12 h-12 border-4 border-[#8ecae6] border-t-white rounded-full animate-spin"></div>
 
       {/* Texte "Chargement…" */}
       <p className="text-[#8ecae6] text-lg mt-4 tracking-wide">Chargement…</p>
