@@ -27,14 +27,14 @@ export default function Skills() {
     Langages: [
       { name: "React.js", icon: "/img/icons/react.svg", color: "#61DAFB" },
       { name: "HTML5", icon: "/img/icons/html5.svg", color: "#fffff" },
-      { name: "CSS3", icon: "/img/icons/css.svg" },
+      { name: "CSS3", icon: "/img/icons/css3.svg" },
       { name: "JavaScript (ES6+)", icon: "/img/icons/javascript.svg", color: "#F7DF1E" },
     ],
 
     Frameworks: [
       { name: "Tailwind CSS", icon: "/img/icons/tailwindcss.svg", color: "#38BDF8" },
       { name: "Bootstrap", icon: "/img/icons/bootstrap.svg", color: "#7952B3" },
-      { name: "Framer Motion", icon: "/img/icons/framer.svg", color: "#0055FF" },
+      { name: "Framer Motion", icon: "/img/icons/framer.svg", color: "#fffff" },
     ],
   };
 
@@ -56,7 +56,7 @@ export default function Skills() {
   const logoVariants = {
     hidden: { opacity: 0, scale: 0.3 },
     visible: (i) => ({
-      opacity: 1,
+      opacity: 4,
       scale: 1,
       transition: {
         delay: i * 0.25,
@@ -74,11 +74,11 @@ export default function Skills() {
     >
       <ParticleNetwork />
 
-      <h2 className="text-3xl text-[#fb8500] font-bold mb-10">Compétences</h2>
+      <h2 className="text-3xl text-[#e5e5e5] font-bold mb-10">Compétences</h2>
 
       <div className="relative w-full max-w-6xl grid gap-12 sm:grid-cols-1 lg:grid-cols-3 text-center">
         {Object.entries(skills).map(([category, items], idx) => (
-          <div key={idx} className="flex flex-col items-center text-white">
+          <div key={idx} className="flex flex-col items-center text-[#e5e5e5]">
             <h3 className="text-2xl font-semibold mb-6">{category}</h3>
 
             <ul className="space-y-6">
@@ -97,7 +97,7 @@ export default function Skills() {
                     variants={logoVariants}
                     src={item.icon}
                     
-                    className="w-10 h-10" b
+                    className="w-13 h-13" b
                     alt={item.name}
                   />
 
@@ -105,7 +105,7 @@ export default function Skills() {
                   <motion.span
                     custom={i}
                     variants={itemVariants}
-                    className="text-lg text-white"
+                    className="text-2xl text-[#e5e5e5]"
                   >
                     {item.name}
                   </motion.span>

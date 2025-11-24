@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 export default function LoaderScreen({ onFinish }) {
   const sequence = [
-    { text: "...Curieux", class: "text-[#8ecae6] font-bold text-4xl" },
-    { text: "...Créatif", class: "text-[#8ecae6] font-bold text-5xl" },
-    { text: "Professionel !", class: "text-[#8ecae6] font-bold text-7xl" },
+    { text: "...curieux", class: "text-[#8ecae6] font-bold text-2xl" },
+    { text: "...créatif", class: "text-[#8ecae6] font-bold text-4xl" },
+    { text: "et proooo !", class: "text-[#8ecae6] font-bold text-7xl" },
   ];
 
   const [step, setStep] = useState(0); // gère le mot affiché
@@ -19,19 +19,19 @@ export default function LoaderScreen({ onFinish }) {
           clearInterval(timer);
 
           // Lance effet boom après le dernier mot
-          setTimeout(() => setFinalBoom(true), 700);
+          setTimeout(() => setFinalBoom(true), 200);
 
           // Fade-out + fin animation
           setTimeout(() => {
             setFadeOut(true);
-            setTimeout(onFinish, 400);
-          }, 800);
+            setTimeout(onFinish, 200);
+          }, 400);
 
           return s;
         }
         return s + 1;
       });
-    }, 2000);
+    }, 1000);
 
     return () => clearInterval(timer);
   }, [onFinish]);
@@ -43,7 +43,7 @@ export default function LoaderScreen({ onFinish }) {
       }`}
     >
       {/* Logo */}
-      <div className="text-[#fb8500] text-5xl w-32 h-32 mb-6 animate-pulse">
+      <div className="border-t-8 text-[#fb8500] text-5xl w-29 h-32 mb-6 animate-pulse">
         <h3>@/////</h3>
         </div>
 
@@ -60,10 +60,10 @@ export default function LoaderScreen({ onFinish }) {
       </div>
 
       {/* Spinner */}
-      <div className="mt-8 w-12 h-12 border-4 border-[#8ecae6] border-t-white rounded-full animate-spin"></div>
+      <div className="mt-8 w-12 h-12 border-4 border-[#8ecae6] border-t-[#fb8500] rounded-full animate-spin"></div>
 
       {/* Texte "Chargement…" */}
-      <p className="text-[#8ecae6] text-lg mt-4 tracking-wide">Chargement…</p>
+      <p className="text-[#fb8500] text-2xl t-lg mt-20 tracking-wide">Chargement…</p>
     </div>
   );
 }
