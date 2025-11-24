@@ -3,7 +3,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative snap-start w-full bg-[#023047] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
+      className="relative snap-start w-full bg-[#000000] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
     >
       <h1 className="text-5xl font-bold text-gray-300 mb-6">Contact</h1>
       <p className="text-gray-300 mb-6 text-center max-w-2xl">

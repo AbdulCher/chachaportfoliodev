@@ -63,7 +63,7 @@ export default function LoaderScreen({ onFinish }) {
       <div className="mt-8 w-12 h-12 border-4 border-[#8ecae6] border-t-[#fb8500] rounded-full animate-spin"></div>
 
       {/* Texte "Chargement…" */}
-      <p className="text-[#fb8500] text-2xl t-lg mt-20 tracking-wide">Chargement…</p>
+      <p className="text-[#fb8500] text-4xl t-lg mt-20 tracking-wide">Chargement…</p>
     </div>
   );
 }
