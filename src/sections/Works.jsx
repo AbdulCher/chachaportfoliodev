@@ -4,26 +4,35 @@ import projects from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import ProjectModal from "../components/ProjectModal";
 import ParticleNetwork from "../animate/ParticleNetwork";
+import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaTwitter } from "react-icons/fa";
+
 
 export default function Works() {
   const [modalProject, setModalProject] = useState(null);
-
+const icons = [
+      { icon: <FaGithub />, link: "https://github.com" },
+      { icon: <FaLinkedin />, link: "https://linkedin.com" },
+      { icon: <FaEnvelope />, link: "mailto:contact@tonmail.com" },
+      { icon: <FaInstagram />, link: "https://instagram.com" },
+      { icon: <FaTwitter />, link: "https://twitter.com" },
+    ];
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
     once: false,
     margin: "-250px",
+
   });
 
   return (
     <motion.section
       ref={sectionRef}
       id="projets"
-      className="relative snap-start w-full bg-[#000000] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
+      className="relative snap-start w-full bg-[#001524] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
     >
       <ParticleNetwork />
-      <h2 className="text-3xl font-bold mb-8 text-[#e5e5e5]">Mes Projets</h2>
+      <h2 className="text-3xl font-bold mb-8 text-[#ffecd1]">Mes Projets</h2>
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => {
           // Determine direction per card (4 cards funky entrance)
           const fromLeft = index % 2 === 0; // index 0 et 2 → gauche
@@ -60,18 +69,29 @@ export default function Works() {
           onClose={() => setModalProject(null)}
         />
       )}
-      {/* ---------- BOUTONS EN BAS ---------- */}
-      <div className="flex flex-row gap-4 mt-20 justify-center">
-        <a href="#projets" className="bg-[#14213d] px-6 py-2 text-[#e5e5e5] rounded hover:bg-[#fca311] hover:text-[#000000] transition">
-          GitHub
-        </a>
-        <a href="#apropos" className="bg-[#14213d] px-6 py-2 text-[#e5e5e5] rounded hover:bg-[#fca311] hover:text-[#000000] transition">
-          Linkedin
-        </a>
-        <a href="#contact" className="bg-[#14213d] px-6 py-2 text-[#e5e5e5] rounded hover:bg-[#fca311] hover:text-[#000000] transition">
-          Contact
-        </a>
-      </div>
+      {/* ░░░ ICONS — PULSE & ROTATION ░░░ */}
+        <div className="flex flex-row mt-24 items-center justify-center gap-8">
+          {icons.map((item, i) => (
+            <motion.a
+              key={i}
+              href={item.link}
+              className="text-4xl text-[#15616d]"
+              initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+              animate={{
+                opacity: 1,
+                scale: [1, 1.2, 1],
+                rotate: [0, 20, 0],
+              }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                delay: i * 0.25,
+              }}
+            >
+              {item.icon}
+            </motion.a>
+          ))}
+        </div>
 
     </motion.section>
   );

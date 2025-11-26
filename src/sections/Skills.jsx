@@ -34,7 +34,7 @@ export default function Skills() {
     Frameworks: [
       { name: "Tailwind CSS", icon: "/img/icons/tailwindcss.svg", color: "#38BDF8" },
       { name: "Bootstrap", icon: "/img/icons/bootstrap.svg", color: "#7952B3" },
-      { name: "Framer Motion", icon: "/img/icons/framer.svg", color: "#fffff" },
+      { name: "Framer Motion", icon: "/img/icons/framer.svg" },
     ],
   };
 
@@ -70,16 +70,16 @@ export default function Skills() {
     <section
       id="competences"
       ref={ref}
-      className="relative snap-start w-full bg-[#000000] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
+      className="relative snap-start w-full bg-[#001524] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
     >
       <ParticleNetwork />
 
-      <h2 className="text-3xl text-[#e5e5e5] font-bold mb-10">Compétences</h2>
+      <h2 className="text-3xl text-[#ffecd1] opacity-90 font-bold mb-10">Compétences</h2>
 
       <div className="relative w-full max-w-6xl grid gap-12 sm:grid-cols-1 lg:grid-cols-3 text-center">
         {Object.entries(skills).map(([category, items], idx) => (
-          <div key={idx} className="flex flex-col items-center text-[#e5e5e5]">
-            <h3 className="text-2xl font-semibold mb-6">{category}</h3>
+          <div key={idx} className="flex flex-col items-center text-[#ffecd1]">
+            <h3 className="text-2xl opacity-90 font-semibold mb-6">{category}</h3>
 
             <ul className="space-y-6">
               {items.map((item, i) => (
@@ -105,11 +105,13 @@ export default function Skills() {
                   <motion.span
                     custom={i}
                     variants={itemVariants}
-                    className="text-2xl text-[#e5e5e5]"
+                    className="text-2xl text-[#ffecd1] opacity-90"
                   >
                     {item.name}
                   </motion.span>
+                  
                 </motion.li>
+                
               ))}
             </ul>
           </div>

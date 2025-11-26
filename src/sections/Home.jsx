@@ -2,13 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import SpinningCube from "../animate/SpinningCube";
 import ParticleNetwork from "../animate/ParticleNetwork";
+import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaTwitter } from "react-icons/fa";
+
 
 const texts = [
-  "_💻DEVELOPPEUR WEB",
-  "⌨ CONÇOIS DES APP",
+  "💻DEVELOPPEUR WEB",
+  "⌨ JE CONÇOIS DES APP",
   "⚙ ET DES SITES MODERNES",
   "🖋 CONTACTEZ-MOI",
-  "🪁 TRANSFORMEZ VOS IDÉES"
+  "🪁 TRANSFORMEZ VOS IDÉES",
+  "_ _ _"
 ];
 
 export default function Home() {
@@ -16,6 +19,14 @@ export default function Home() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
   const intervalRef = useRef(null);
+  const icons = [
+    { icon: <FaGithub />, link: "https://github.com" },
+    { icon: <FaLinkedin />, link: "https://linkedin.com" },
+    { icon: <FaEnvelope />, link: "mailto:contact@tonmail.com" },
+    { icon: <FaInstagram />, link: "https://instagram.com" },
+    { icon: <FaTwitter />, link: "https://twitter.com" },
+  ];
+
 
   useEffect(() => {
     // Quand on revient sur la section, reset l'index
@@ -42,7 +53,7 @@ export default function Home() {
     <motion.section
       ref={ref}
       id="accueil"
-      className="mt-28 snap-start bg-[#000000] flex flex-col items-center justify-between min-h-screen p-6 lg:px-16 py-10"
+      className="snap-start bg-[#001524] flex flex-col items-center justify-between min-h-screen p-6 lg:px-16 py-10"
     >
       <ParticleNetwork />
 
@@ -54,7 +65,7 @@ export default function Home() {
           {/* H1 animé */}
           <motion.h1
             key={currentIndex} // force la réanimation à chaque changement
-            className="mt-10 text-5xl lg:text-6xl text-[#e5e5e5] font-bold leading-tight flex flex-wrap justify-center lg:justify-start"
+            className="mt-10 text-5xl lg:text-6xl text-[#15616d] font-bold leading-tight flex flex-wrap justify-center lg:justify-start"
             initial="hidden"
             animate="visible"
             variants={{ visible: { transition: { staggerChildren: 0.10 } } }}
@@ -75,8 +86,8 @@ export default function Home() {
           </motion.h1>
 
           {/* H2 ou autre texte */}
-          <motion.h2 className="border-transparent rounded-md px-2 py-2 inline-block text-3xl lg:text-4xl text-[#e5e5e5] font-bold whitespace-pre-line">
-            {"NNNNN\nTATATA\nALLOU!".split("").map((char, index) => (
+          <motion.h2 className="border-transparent rounded-md px-2 py-2 inline-block text-3xl lg:text-4xl text-[#ffecd1] opacity-90 font-bold whitespace-pre-line">
+            {"NDIAYE\nCHEIKH\nABDUL!".split("").map((char, index) => (
               <motion.span
                 key={index}
                 variants={{
@@ -90,7 +101,7 @@ export default function Home() {
           </motion.h2>
 
           {/* Paragraphe */}
-          <motion.p className="px-2 text-[#e5e5e5] text-lg lg:text-xl leading-relaxed max-w-2xl">
+          <motion.p className="opacity-90 px-2 text-[#ffecd1] text-lg lg:text-xl leading-relaxed max-w-2xl">
             Je transforme des maquettes Figma en sites web modernes et responsives.
             Curieux et rigoureux, j’aime relever des défis techniques et concevoir
             des interfaces élégantes et fonctionnelles.
@@ -111,24 +122,29 @@ export default function Home() {
         </motion.div>
         </motion.div>
       </motion.div>
-      {/* ---------- BOUTONS EN BAS ---------- */}
-      <div className="flex flex-row gap-4 mt-10 justify-center">
-        <motion.div
-  whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.95 }}
-  onHoverStart={() => console.log('hover started!')}
-/>
-        <a href="#projets" className="bg-[#14213d] px-6 py-2 text-[#e5e5e5] rounded hover:bg-[#fca311] hover:text-[#000000] transition">
-          GitHub
-        </a>
-        <a href="#apropos" className="bg-[#14213d] px-6 py-2 text-[#e5e5e5] rounded hover:bg-[#fca311] hover:text-[#000000] transition">
-          Linkedin
-        </a>
-        <a href="#contact" className="bg-[#14213d] px-6 py-2 text-[#e5e5e5] rounded hover:bg-[#fca311] hover:text-[#000000] transition">
-          Contact
-        </a>
-      </div>
-<motion.div />
+      {/* ░░░ ICONS — PULSE & ROTATION ░░░ */}
+        <div className="flex flex-row items-center justify-center mt-14 gap-8">
+          {icons.map((item, i) => (
+            <motion.a
+              key={i}
+              href={item.link}
+              className="text-4xl text-[#15616d]"
+              initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+              animate={{
+                opacity: 1,
+                scale: [1, 1.2, 1],
+                rotate: [0, 20, 0],
+              }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                delay: i * 0.25,
+              }}
+            >
+              {item.icon}
+            </motion.a>
+          ))}
+        </div>
       {/* Cube */}
       <div className="w-full flex justify-center mt-8 lg:mt-12" style={{ height: "300px" }}>
         <SpinningCube size={100} />

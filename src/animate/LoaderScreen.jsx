@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 export default function LoaderScreen({ onFinish }) {
   const sequence = [
-    { text: "...curieux", class: "text-[#8ecae6] font-bold text-2xl" },
-    { text: "...créatif", class: "text-[#8ecae6] font-bold text-4xl" },
-    { text: "et proooo !", class: "text-[#8ecae6] font-bold text-7xl" },
+    { text: "...curieux", class: "text-[#ffecd1] text-2xl" },
+    { text: "...créatif", class: "text-[#ffecd1] text-4xl" },
+    { text: "et professionnel !", class: "text-[#ffecd1] text-7xl" },
   ];
 
   const [step, setStep] = useState(0); // gère le mot affiché
@@ -43,7 +43,7 @@ export default function LoaderScreen({ onFinish }) {
       }`}
     >
       {/* Logo */}
-      <div className="border-t-8 text-[#fb8500] text-5xl w-29 h-32 mb-6 animate-pulse">
+      <div className="p-2 border-t-8 text-[#ff7d00] text-5xl w-36 h-32 mb-6 animate-pulse">
         <h3>@/////</h3>
         </div>
 
@@ -60,10 +60,10 @@ export default function LoaderScreen({ onFinish }) {
       </div>
 
       {/* Spinner */}
-      <div className="mt-8 w-12 h-12 border-4 border-[#8ecae6] border-t-[#fb8500] rounded-full animate-spin"></div>
+      <div className="mt-8 w-12 h-12 border-4 border-[#15616d] border-t-[#ffecd1] rounded-full animate-spin"></div>
 
       {/* Texte "Chargement…" */}
-      <p className="text-[#fb8500] text-4xl t-lg mt-20 tracking-wide">Chargement…</p>
+      <p className="text-[#ff7d00] text-4xl t-lg mt-20 tracking-wide">Chargement…</p>
     </div>
   );
 }
