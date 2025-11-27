@@ -2,6 +2,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import ParticleNetwork from "../animate/ParticleNetwork";
 import SpinningCube from "../animate/SpinningCube";
+import BgChacha from "../animate/BgChacha";
 
 export default function Skills() {
   const ref = useRef(null);
@@ -70,16 +71,20 @@ export default function Skills() {
     <section
       id="competences"
       ref={ref}
-      className="relative snap-start w-full bg-[#001524] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
+      className="
+        snap-start w-full relative
+        bg-[#001524] text-[#ffecd1]
+        flex flex-col items-center
+        px-6 md:px-12 lg:px-20 pt-30 pb-30"
     >
       <ParticleNetwork />
 
-      <h2 className="text-3xl text-[#ffecd1] opacity-90 font-bold mb-10">Compétences</h2>
+      <h2 className="text-[#ffecd1] mb-8 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">Compétences</h2>
 
       <div className="relative w-full max-w-6xl grid gap-12 sm:grid-cols-1 lg:grid-cols-3 text-center">
         {Object.entries(skills).map(([category, items], idx) => (
           <div key={idx} className="flex flex-col items-center text-[#ffecd1]">
-            <h3 className="text-2xl opacity-90 font-semibold mb-6">{category}</h3>
+            <h3 className="text-2xl opacity-90 font-semibold text-[#ff7d00] mb-6">{category}</h3>
 
             <ul className="space-y-6">
               {items.map((item, i) => (
@@ -97,7 +102,7 @@ export default function Skills() {
                     variants={logoVariants}
                     src={item.icon}
                     
-                    className="w-13 h-13" b
+                    className="w-10 h-10" b
                     alt={item.name}
                   />
 
@@ -105,7 +110,7 @@ export default function Skills() {
                   <motion.span
                     custom={i}
                     variants={itemVariants}
-                    className="text-2xl text-[#ffecd1] opacity-90"
+                    className="text-xl text-[#ffecd1] opacity-90"
                   >
                     {item.name}
                   </motion.span>
@@ -117,6 +122,7 @@ export default function Skills() {
           </div>
         ))}
       </div>
+<BgChacha />
       <SpinningCube size={5} />
     </section>
   );

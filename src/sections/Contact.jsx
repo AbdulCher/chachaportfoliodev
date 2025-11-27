@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaTwitter } from "react-icons/fa";
 import TypewriterText from "../animate/TypewriterText"; // chemin selon ton projet
+import TextFadeLoop from "../animate/TextFadeLoop";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -25,10 +26,15 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative snap-start bg-[#001524] text-[#ffecd1] flex flex-col items-center justify-center px-8 lg:px-20 py-10"
+      className="
+        relative snap-start 
+        bg-[#001524] text-[#ffecd1] 
+        flex flex-col items-center 
+        justify-center px-8 lg:px-20 py-36"
     >
+      
       {/* ░░░ TITLE ░░░ */}
-      <h2 className="mt-30 opacity-90 text-2xl lg:text-4xl font-bold mb-4 text-center">Contact</h2>
+      <h2 className="text-[#ffecd1] mb-8 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">Contact</h2>
 
       {/* ░░░ TEXT SCROLLING UNDER TITLE ░░░ */}
     
@@ -40,9 +46,9 @@ export default function Contact() {
         onViewportEnter={() => setTriggerText(prev => !prev)} // inverser trigger à chaque scroll
       >
         <TypewriterText
-          text="Une question ou une idée? Par ce formulaire ou par les réseaux👇."
+          text="Une question ou une idée? Utilisez ce formulaire ou les réseaux sociaux👇."
           speed={90}
-          className="opacity-90 text-[#ffecd1] text-lg"
+          className="opacity-90 text-[#15616d] text-lg"
           trigger={triggerText}
         />
       </motion.div>
@@ -82,7 +88,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="bg-[#15616d] hover:bg-[#78290f] text-[#ffecd1] font-bold py-3 rounded transition"
+                className="bg-[#15616d] hover:bg-[#ff7d00] text-[#ffecd1] font-bold py-3 rounded transition"
               >
                 Envoyer
               </button>
@@ -98,29 +104,29 @@ export default function Contact() {
           )}
         </motion.div>
 
-        {/* ░░░ ICONS — PULSE & ROTATION ░░░ */}
-        <div className="relative flex flex-row items-center justify-center gap-8">
-          {icons.map((item, i) => (
-            <motion.a
-              key={i}
-              href={item.link}
-              className="text-4xl text-[#15616d]"
-              initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
-              animate={{
-                opacity: 1,
-                scale: [1, 1.2, 1],
-                rotate: [0, 20, 0],
-              }}
-              transition={{
-                duration: 1.2,
-                repeat: Infinity,
-                delay: i * 0.25,
-              }}
-            >
-              {item.icon}
-            </motion.a>
-          ))}
-        </div>
+        {/* ----------- ICÔNES ANIMÉES ----------- */}
+      <div className="flex flex-row items-center justify-center gap-8">
+        {icons.map((item, i) => (
+          <motion.a
+            key={i}
+            href={item.link}
+            className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#15616d]"
+            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+            animate={{
+              opacity: 1,
+              scale: [1, 1.2, 1],
+              rotate: [0, 40, 0],
+            }}
+            transition={{
+              duration: 4.2,
+              repeat: Infinity,
+              delay: i * 0.25,
+            }}
+          >
+            {item.icon}
+          </motion.a>
+        ))}
+      </div>
       </div>
     </section>
   );

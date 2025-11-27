@@ -28,7 +28,7 @@ export default function ParticleNetwork({ width = 1200, height = 600, numPoints 
           const dy = points.current[i].y - points.current[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 800) { // distance pour connecter les points
-            ctx.strokeStyle = `rgba(255, 125, 0, ${1 - dist / 800})`; // bleu doux, plus clair si proche
+            ctx.strokeStyle = `rgba(255, 125, 0, ${1 - dist / 600})`; // bleu doux, plus clair si proche
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(points.current[i].x, points.current[i].y);

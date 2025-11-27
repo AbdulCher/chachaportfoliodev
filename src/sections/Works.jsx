@@ -30,9 +30,10 @@ const icons = [
       className="relative snap-start w-full bg-[#001524] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
     >
       <ParticleNetwork />
-      <h2 className="text-3xl font-bold mb-8 text-[#ffecd1]">Mes Projets</h2>
+      <h2 className="text-[#ffecd1] mb-8 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">Mes Projets</h2>
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+
         {projects.map((project, index) => {
           // Determine direction per card (4 cards funky entrance)
           const fromLeft = index % 2 === 0; // index 0 et 2 → gauche
@@ -69,29 +70,30 @@ const icons = [
           onClose={() => setModalProject(null)}
         />
       )}
-      {/* ░░░ ICONS — PULSE & ROTATION ░░░ */}
-        <div className="flex flex-row mt-24 items-center justify-center gap-8">
-          {icons.map((item, i) => (
-            <motion.a
-              key={i}
-              href={item.link}
-              className="text-4xl text-[#15616d]"
-              initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
-              animate={{
-                opacity: 1,
-                scale: [1, 1.2, 1],
-                rotate: [0, 20, 0],
-              }}
-              transition={{
-                duration: 1.2,
-                repeat: Infinity,
-                delay: i * 0.25,
-              }}
-            >
-              {item.icon}
-            </motion.a>
-          ))}
-        </div>
+
+       {/* ----------- ICÔNES ANIMÉES ----------- */}
+      <div className="flex mt-12 flex-row items-center justify-center gap-8">
+        {icons.map((item, i) => (
+          <motion.a
+            key={i}
+            href={item.link}
+            className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#15616d]"
+            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+            animate={{
+              opacity: 1,
+              scale: [1, 1.2, 1],
+              rotate: [0, 40, 0],
+            }}
+            transition={{
+              duration: 4.2,
+              repeat: Infinity,
+              delay: i * 0.25,
+            }}
+          >
+            {item.icon}
+          </motion.a>
+        ))}
+      </div>
 
     </motion.section>
   );

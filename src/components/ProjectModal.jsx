@@ -3,7 +3,7 @@ import React from "react";
 export default function ProjectModal({ project, onClose }) {
   return (
     <div className="fixed inset-0 bg- flex items-center justify-center z-50">
-      <div className="bg-[#001524] border-4 border-[#ff7d00] p-6 rounded-xl max-w-4xl w-full relative shadow-lg">
+      <div className="bg-[#001524]/90 border-4 border-[#ff7d00] p-6 rounded-xl max-w-4xl w-full relative shadow-lg">
         <button
           onClick={onClose}
           className="absolute top-1 right-4 text-white text-3xl"
@@ -14,7 +14,7 @@ export default function ProjectModal({ project, onClose }) {
         <div className="flex flex-col md:flex-row gap-6">
           
           {/* IMAGE PLUS LARGE */}
-          <div className="w-full md:w-[45%] border-4 border-[#ff7d00] border-rounded">
+          <div className="w-full md:w-[45%] rounded">
             <img
               src={project.modalimg}
               alt={project.title}
