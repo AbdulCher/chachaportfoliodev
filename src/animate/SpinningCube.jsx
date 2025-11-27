@@ -14,7 +14,7 @@ function RotatingCube() {
   return (
     <mesh ref={meshRef}>
       <boxGeometry args={[2, 2, 2]} />
-      <meshStandardMaterial color="#ffecd1" />
+      <meshStandardMaterial color="#ece5dd" />
     </mesh>
   );
 }

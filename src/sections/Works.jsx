@@ -8,14 +8,16 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaTwitter } from "react-
 
 
 export default function Works() {
+
   const [modalProject, setModalProject] = useState(null);
-const icons = [
-      { icon: <FaGithub />, link: "https://github.com" },
-      { icon: <FaLinkedin />, link: "https://linkedin.com" },
-      { icon: <FaEnvelope />, link: "mailto:contact@tonmail.com" },
-      { icon: <FaInstagram />, link: "https://instagram.com" },
-      { icon: <FaTwitter />, link: "https://twitter.com" },
-    ];
+  const icons = [
+        { icon: <FaGithub />, link: "https://github.com" },
+        { icon: <FaLinkedin />, link: "https://linkedin.com" },
+        { icon: <FaEnvelope />, link: "mailto:contact@tonmail.com" },
+        { icon: <FaInstagram />, link: "https://instagram.com" },
+        { icon: <FaTwitter />, link: "https://twitter.com" },
+      ];
+
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
     once: false,
@@ -30,14 +32,12 @@ const icons = [
       className="relative snap-start w-full bg-[#001524] flex flex-col items-center justify-center p-6 lg:px-16 py-36"
     >
       <ParticleNetwork />
-      <h2 className="text-[#ffecd1] mb-8 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">Mes Projets</h2>
-
+      <h2 className="text-[#ece5dd] mb-8 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">Mes Projets</h2>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-
         {projects.map((project, index) => {
-          // Determine direction per card (4 cards funky entrance)
-          const fromLeft = index % 2 === 0; // index 0 et 2 → gauche
-          const fromRight = index % 2 === 1; // index 1 et 3 → droite
+          const fromLeft = index % 2 === 0; 
+          const fromRight = index % 2 === 1; 
 
           return (
             <motion.div
@@ -71,13 +71,12 @@ const icons = [
         />
       )}
 
-       {/* ----------- ICÔNES ANIMÉES ----------- */}
       <div className="flex mt-12 flex-row items-center justify-center gap-8">
         {icons.map((item, i) => (
           <motion.a
             key={i}
             href={item.link}
-            className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#15616d]"
+            className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#27818f]"
             initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
             animate={{
               opacity: 1,

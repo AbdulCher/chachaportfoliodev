@@ -22,20 +22,16 @@ export default function About() {
       id="apropos"
       className="
         snap-start w-full relative
-        bg-[#001524] text-[#ffecd1]
+        bg-[#001524] text-[#ece5dd]
         flex flex-col items-center
-        px-6 md:px-12 lg:px-20 pt-30 pb-30
+        px-6 md:px-12 lg:px-20 pt-30 pb-30 border-t-2 border-[]
       "
     >
       <ParticleNetwork />
 
-      {/* ---------- CONTENU PRINCIPAL ---------- */}
       <div className="w-full flex flex-col lg:flex-row gap-14 lg:gap-20">
-
-        {/* ------------ COLONNE TEXTE ------------ */}
-        <div className="flex-1 text-left space-y-6">
-          
-          <h2 className="text-[#ffecd1] mt-4 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">
+        <motion.article className="flex-1 text-left space-y-6">
+          <h2 className="text-[#ece5dd] mt-4 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">
             À propos de <span className="text-[#ff7d00]">ChaChaDev</span>
           </h2>
 
@@ -45,14 +41,10 @@ export default function About() {
             Curieux et rigoureux, j’aime relever des défis techniques et concevoir
             des interfaces élégantes et fonctionnelles.
           </p>
+        </motion.article>
 
-        </div>
-
-        {/* ------------ COLONNE DROITE : CARDS ------------ */}
-        <div className="flex-1 flex flex-col items-center lg:items-start w-full">
-          
-          <div className="w-full pl-0 grid gap-3">
-            
+        <motion.article className="flex-1 flex flex-col items-center lg:items-start w-full">
+          <motion.figure className="w-full pl-0 grid gap-3">
             <AnimatedCard direction="left" delay={0.20}>
               <div className="bg-[#001524]/14 p-2 rounded-lg shadow-sm shadow-[#ffecd1]/40 text-center">
                 <h3 className="text-xl">Booki</h3>
@@ -73,29 +65,23 @@ export default function About() {
                 <p className="text-md opacity-90">Application React complète</p>
               </div>
             </AnimatedCard>
+          </motion.figure>
 
-          </div>
-
-          {/* ----- Button centered ----- */}
           <a
             href="#projets"
             className="
-              mt-6 bg-[#15616d] text-[#ffecd1]
+              mt-6 bg-[#27818f] text-[#ece5dd]
               px-6 py-2 rounded
               hover:bg-[#ff7d00] hover:text-black transition
               self-center
             "
-          >
+            >
             Mes projets →
           </a>
-
-        </div>
+        </motion.article>
       </div>
-
-      {/* ----------- TEXTE ANIMÉ CENTRÉ ----------- */}
       
       <motion.div className="relative w-full h-full flex items-center justify-center">
-        
         <FondPortfolio
           className="text-[#ff7d00] font-extrabold
           xl:text-[4rem]
@@ -105,13 +91,12 @@ export default function About() {
         />
       </motion.div>
 
-      {/* ----------- ICÔNES ANIMÉES ----------- */}
       <div className="flex flex-row items-center justify-center gap-8">
         {icons.map((item, i) => (
           <motion.a
             key={i}
             href={item.link}
-            className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#15616d]"
+            className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#27818f]"
             initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
             animate={{
               opacity: 1,
@@ -128,7 +113,8 @@ export default function About() {
           </motion.a>
         ))}
       </div>
-<SpinningCube />
+
+      <SpinningCube />
     </motion.section>
   );
 }

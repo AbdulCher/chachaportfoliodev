@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 export default function BgChacha() {
     return(
-        <div className="text-[#ff7d00]/30 mt-8 font-extrabold
-      xl:text-[4rem]
-      lg:text-[3rem]
-      md:text-[2.4rem]
-      sm:text-[2rem]">
+        <div className="text-[#ff7d00] mt-8 font-extrabold
+      xl:text-[3rem]
+      lg:text-[2.5rem]
+      md:text-[1.4rem]
+      sm:text-[1rem]">
             <p>ChaChaDev</p>
         </div>
     )

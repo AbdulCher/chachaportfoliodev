@@ -13,11 +13,10 @@ export default function Skills() {
     if (isInView) {
       controls.start("visible");
     } else {
-      controls.start("hidden"); // reset pour rejouer l'animation
+      controls.start("hidden");
     }
   }, [isInView, controls]);
 
-  // 🎨 LES DONNÉES STRUCTURÉES
   const skills = {
     Outils: [
       { name: "Figma", icon: "/img/icons/figma.svg", },
@@ -39,7 +38,6 @@ export default function Skills() {
     ],
   };
 
-  // 🎬 Animation éléments (icône + texte)
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i) => ({
@@ -53,7 +51,6 @@ export default function Skills() {
     }),
   };
 
-  // 🎬 Animation icônes
   const logoVariants = {
     hidden: { opacity: 0, scale: 0.3 },
     visible: (i) => ({
@@ -73,17 +70,17 @@ export default function Skills() {
       ref={ref}
       className="
         snap-start w-full relative
-        bg-[#001524] text-[#ffecd1]
+        bg-[#001524] text-[#ece5dd]
         flex flex-col items-center
         px-6 md:px-12 lg:px-20 pt-30 pb-30"
     >
       <ParticleNetwork />
 
-      <h2 className="text-[#ffecd1] mb-8 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">Compétences</h2>
+      <h2 className="text-[#ece5dd] mb-8 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">Compétences</h2>
 
       <div className="relative w-full max-w-6xl grid gap-12 sm:grid-cols-1 lg:grid-cols-3 text-center">
         {Object.entries(skills).map(([category, items], idx) => (
-          <div key={idx} className="flex flex-col items-center text-[#ffecd1]">
+          <div key={idx} className="flex flex-col items-center text-[#ece5dd]">
             <h3 className="text-2xl opacity-90 font-semibold text-[#ff7d00] mb-6">{category}</h3>
 
             <ul className="space-y-6">
@@ -96,21 +93,19 @@ export default function Skills() {
                   animate={controls}
                   className="flex items-center justify-center space-x-4"
                 >
-                  {/* LOGO */}
                   <motion.img
                     custom={i}
                     variants={logoVariants}
                     src={item.icon}
                     
-                    className="w-10 h-10" b
+                    className="w-10 h-10"
                     alt={item.name}
                   />
 
-                  {/* NOM */}
                   <motion.span
                     custom={i}
                     variants={itemVariants}
-                    className="text-xl text-[#ffecd1] opacity-90"
+                    className="text-xl text-[#ece5dd] opacity-90"
                   >
                     {item.name}
                   </motion.span>
@@ -122,7 +117,9 @@ export default function Skills() {
           </div>
         ))}
       </div>
-<BgChacha />
+
+      <BgChacha />
+
       <SpinningCube size={5} />
     </section>
   );
