@@ -120,7 +120,7 @@ export default function Skills() {
 
       <BgChacha />
 
-      <SpinningCube size={5} />
+      {/* <SpinningCube size={5} /> */}
     </section>
   );
 }

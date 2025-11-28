@@ -2,11 +2,13 @@ export default function ProjectCard({ project, onOpen }) {
   return (
     <div
       onClick={() => onOpen(project)}
-      className="relative cursor-pointer overflow-hidden rounded-xl shadow-lg group"
+      className="relative cursor-pointer overflow-hidden rounded-xl shadow-lg group will-change-transform"
     >
+
       <img
         src={project.image} // <- bien image
         alt={project.title}
+        loading="lazy"
         className="w-full h-64 opacity-90 object-cover border border-[#ece5dd]"
       />
       <div className="absolute inset-0 bg-[#ece5dd]/70 border border-[#ffecd1] text-[#001524] opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center">

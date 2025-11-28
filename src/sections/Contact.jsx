@@ -96,28 +96,35 @@ export default function Contact() {
             </motion.div>
           )}
         </motion.div>
+
         <div className="flex flex-row items-center justify-center gap-8">
-          {icons.map((item, i) => (
-            <motion.a
-              key={i}
-              href={item.link}
-              className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#27818f]"
-              initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
-              animate={{
-                opacity: 1,
-                scale: [1, 1.2, 1],
-                rotate: [0, 40, 0],
-              }}
-              transition={{
-                duration: 4.2,
-                repeat: Infinity,
-                delay: i * 0.25,
-              }}
-            >
-              {item.icon}
-            </motion.a>
-          ))}
-        </div>
+                {icons.map((item, i) => (
+                  <motion.a
+                    key={i}
+                    href={item.link}
+                    className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#27818f]"
+                    initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+                     animate={{
+                      opacity: 1,
+                      scale: 1,
+                      rotate: 0,
+                    }}
+                    transition={{
+                      duration: 0.8,
+                      delay: i * 0.15,
+                      ease: "easeOut",
+                    }}
+                    whileHover={{
+                      scale: 1.3,
+                      rotate: 10,
+                      transition: { duration: 0.3 },
+                    }}
+                  >
+                    {item.icon}
+                  </motion.a>
+                ))}
+              </div>
+        
       </div>
     </section>
   );

@@ -2,9 +2,15 @@ import React from "react";
 
 export default function ProjectModal({ project, onClose }) {
   return (
-    <div className="fixed inset-0 bg- flex items-center justify-center z-50">
-      <div className="bg-[#001524] border-4 border-[#ff7d00] p-6 rounded-xl max-w-4xl w-full relative shadow-lg">
-        <button
+    <div
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
+      onClick={onClose}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-[#001524] border-4 border-[#ff7d00] p-6 rounded-xl max-w-4xl w-full relative shadow-lg animate-fadeIn"
+      >
+<button
           onClick={onClose}
           className="absolute top-1 right-4 text-[#ece5dd] text-3xl"
         >

@@ -1,0 +1,39 @@
+/* ----- ANIMATIONS ----- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-down {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fade-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* CLASSES DE BASE */
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Variantes */
+.fade-up.animate    { animation: fade-up 0.8s forwards; }
+.fade-down.animate  { animation: fade-down 0.8s forwards; }
+.fade-left.animate  { animation: fade-left 0.8s forwards; }
+.fade-right.animate { animation: fade-right 0.8s forwards; }
+.fade.animate       { animation: fade 0.8s forwards; }
+
+/* Retard personnalisable */
+.delay-sm.animate { animation-delay: 0.2s; }
+.delay-md.animate { animation-delay: 0.4s; }
+.delay-lg.animate { animation-delay: 0.6s; }

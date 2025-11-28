@@ -12,7 +12,7 @@ const Header = () => {
         {/* LOGO */}
         <AnimatedCard direction="left" delay={0.6}>
           <div className="hover:animate-ping">
-            <div className="text-xl text-[#ff7d00] font-bold border-t-8 border-0">
+            <div className="text-2xl text-[#ff7d00] font-bold border-t-8 border-0">
               <strong className="text-1xl">@</strong>/////
             </div>
           </div>
@@ -26,7 +26,7 @@ const Header = () => {
         </div>
 
         {/* ----- MENU NORMAL (≥ md) ----- */}
-        <ul className="hidden md:flex space-x-6 text-[#ff7d00]">
+        <ul className="hidden md:flex space-x-6 text-2xl text-[#ff7d00]">
           <li><a href="#accueil" className="rounded p-1 hover:text-[#14213d] hover:bg-[#ff7d00]">Accueil</a></li>
           <li><a href="#apropos" className="rounded p-1 hover:text-[#14213d] hover:bg-[#ff7d00]">À propos</a></li>
           <li><a href="#projets" className="rounded p-1 hover:text-[#14213d] hover:bg-[#ff7d00]">Projets</a></li>

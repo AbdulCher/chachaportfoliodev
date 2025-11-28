@@ -1,14 +1,11 @@
 import AnimatedCard from "../animate/AnimatedCard";
 import ParticleNetwork from "../animate/ParticleNetwork";
-import TextRotator from "../animate/TextRotator";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaTwitter } from "react-icons/fa";
-import TextFadeLoop from "../animate/TextFadeLoop";
 import FondPortfolio from "../animate/BgPortfolio";
 import SpinningCube from "../animate/SpinningCube";
 
 export default function About() {
-
   const icons = [
     { icon: <FaGithub />, link: "https://github.com" },
     { icon: <FaLinkedin />, link: "https://linkedin.com" },
@@ -24,13 +21,25 @@ export default function About() {
         snap-start w-full relative
         bg-[#001524] text-[#ece5dd]
         flex flex-col items-center
-        px-6 md:px-12 lg:px-20 pt-30 pb-30 border-t-2 border-[]
+        px-6 md:px-12 lg:px-20 pt-30 pb-30
       "
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
     >
+      {/* Effet de fond optimisé */}
       <ParticleNetwork />
 
       <div className="w-full flex flex-col lg:flex-row gap-14 lg:gap-20">
-        <motion.article className="flex-1 text-left space-y-6">
+        {/* Texte de gauche */}
+        <motion.article
+          className="flex-1 text-left space-y-6"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-[#ece5dd] mt-4 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">
             À propos de <span className="text-[#ff7d00]">ChaChaDev</span>
           </h2>
@@ -43,7 +52,14 @@ export default function About() {
           </p>
         </motion.article>
 
-        <motion.article className="flex-1 flex flex-col items-center lg:items-start w-full">
+        {/* Bloc des 3 compétences */}
+        <motion.article
+          className="flex-1 flex flex-col items-center lg:items-start w-full"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <motion.figure className="w-full pl-0 grid gap-3">
             <AnimatedCard direction="left" delay={0.20}>
               <div className="bg-[#001524]/14 p-2 rounded-lg shadow-sm shadow-[#ffecd1]/40 text-center">
@@ -75,13 +91,19 @@ export default function About() {
               hover:bg-[#ff7d00] hover:text-black transition
               self-center
             "
-            >
+          >
             Mes projets →
           </a>
         </motion.article>
       </div>
-      
-      <motion.div className="relative w-full h-full flex items-center justify-center">
+
+      <motion.div
+        className="relative w-full h-full flex items-center justify-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <FondPortfolio
           className="text-[#ff7d00] font-extrabold
           xl:text-[4rem]
@@ -91,22 +113,22 @@ export default function About() {
         />
       </motion.div>
 
-      <div className="flex flex-row items-center justify-center gap-8">
+      {/* Icônes optimisées (one-time anim + hover) */}
+      <div className="flex flex-row items-center justify-center gap-8 pt-6">
         {icons.map((item, i) => (
           <motion.a
             key={i}
             href={item.link}
+            aria-label={`Lien vers ${item.link}`}
             className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#27818f]"
-            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
-            animate={{
-              opacity: 1,
-              scale: [1, 1.2, 1],
-              rotate: [0, 40, 0],
-            }}
-            transition={{
-              duration: 4.2,
-              repeat: Infinity,
-              delay: i * 0.25,
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.15 }}
+            whileHover={{
+              scale: 1.3,
+              rotate: 10,
+              transition: { duration: 0.25 },
             }}
           >
             {item.icon}
@@ -114,7 +136,7 @@ export default function About() {
         ))}
       </div>
 
-      <SpinningCube />
+      {/* <SpinningCube /> */}
     </motion.section>
   );
 }

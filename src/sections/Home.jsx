@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedCard from "../animate/AnimatedCard";
 import SpinningCube from "../animate/SpinningCube";
-import profileImage from "../../img/profile.jpg";
+import profileImage from "../../img/profile.webp";
 import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaTwitter } from "react-icons/fa";
 import ParticleNetwork from "../animate/ParticleNetwork";
 import BgChacha from "../animate/BgChacha";
 
 const Home = () => {
+  const [iconsAnimated, setIconsAnimated] = useState(false);
+
   const icons = [
     { icon: <FaGithub />, link: "https://github.com" },
     { icon: <FaLinkedin />, link: "https://linkedin.com" },
@@ -16,17 +18,19 @@ const Home = () => {
     { icon: <FaTwitter />, link: "https://twitter.com" },
   ];
 
+  // Animation des icônes au premier rendu uniquement
+  useEffect(() => {
+    setIconsAnimated(true);
+  }, []);
+
   return (
     <section
       id="accueil"
-      className="
-        snap-start min-h-screen w-full relative 
-        bg-[#001524] justify-center 
-        flex flex-col items-center 
-        gap-10 px-6 md:px-12 lg:px-20 pt-28"
+      className="snap-start min-h-screen w-full relative flex flex-col items-center gap-10 px-6 md:px-12 lg:px-20 pt-28 bg-[#001524]"
     >
-      <ParticleNetwork />
-    
+      <ParticleNetwork numPoints={6} />
+
+      {/* Texte + image */}
       <div className="w-full flex flex-col md:flex-row items-center justify-center gap-10">
         <motion.article className="flex-1 text-center md:text-left space-y-6">
           <AnimatedCard direction="left" delay={0.3}>
@@ -55,6 +59,7 @@ const Home = () => {
               src={profileImage}
               alt="profil"
               className="md:w-52 md:h-52 lg:w-56 lg:h-56 w-36 h-36 object-cover rounded-full shadow-xl border-4 border-[#ff7d00]"
+              loading="lazy"
             />
           </motion.figure>
         </AnimatedCard>
@@ -62,22 +67,24 @@ const Home = () => {
 
       <BgChacha />
 
+      {/* Icônes réseaux */}
       <div className="flex flex-row items-center justify-center gap-8">
         {icons.map((item, i) => (
           <motion.a
             key={i}
             href={item.link}
             className="text-xl md:text-2xl xl:text-5xl lg:text-4xl text-[#27818f]"
-            initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
-            animate={{
-              opacity: 4,
-              scale: [1, 1.2, 1],
-              rotate: [0, 40, 0],
-            }}
+            initial={iconsAnimated ? { opacity: 0, scale: 0.5, rotate: -20 } : {}}
+            animate={iconsAnimated ? { opacity: 1, scale: [1, 1.2, 1], rotate: [0, 40, 0] } : {}}
             transition={{
-              duration: 4.2,
-              repeat: Infinity,
-              delay: i * 0.25,
+              duration: 0.8,
+              delay: i * 0.2,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              scale: 1.3,
+              rotate: 10,
+              transition: { duration: 0.3 },
             }}
           >
             {item.icon}
@@ -85,9 +92,10 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="w-full flex justify-center ms:w-4">
-        <SpinningCube size={100} />
-      </div>
+      {/* Spinning Cube */}
+      {/* <div className="w-full flex justify-center ms:w-4"> */}
+        {/* <SpinningCube size={100} /> */}
+      {/* </div> */}
     </section>
   );
 };

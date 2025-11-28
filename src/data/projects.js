@@ -5,10 +5,10 @@ const projects = [
     description:
       "Création d’un site de planification de vacances dynamique à partir d’une maquette Figma. Intégration responsive complète en HTML et CSS.",
     stack: ["HTML", "CSS", "Figma"],
-    image: "/img/cards/homebooki.png",
-    modalimg: "/img/booki.png",
+    image: "/img/cards/homebooki.webp",
+    modalimg: "/img/booki.webp",
     github: "https://github.com/tonrepo/booki",
-    demo: "https://booki-demo.com",
+    
   },
   {
     id: 2,
@@ -16,10 +16,10 @@ const projects = [
     description:
       "Développement d’un portfolio d’architecte avec gestion dynamique des galeries et modales via JavaScript.",
     stack: ["HTML", "CSS", "JavaScript"],
-    image: "/img/cards/homesophie.png",
-    modalimg: "/img/sophiebluel.png",
+    image: "/img/cards/homesophie.webp",
+    modalimg: "/img/sophiebluel.webp",
     github: "https://github.com/tonrepo/sophiebluel",
-    demo: "https://sophiebluel-demo.com",
+    
   },
   {
     id: 3,
@@ -27,8 +27,8 @@ const projects = [
     description:
       "Refonte complète d’un site de location immobilière en React. Création de composants, routage et gestion de données JSON.",
     stack: ["React", "Vite", "CSS Modules"],
-    image: "/img/cards/homekasa.png",
-    modalimg: "/img/kasa.png",
+    image: "/img/cards/homekasa.webp",
+    modalimg: "/img/kasa.webp",
     github: "https://github.com/tonrepo/kasa",
     demo: "https://kasa-demo.com",
   },
@@ -38,8 +38,8 @@ const projects = [
     description:
       "Refonte complète d’un site de location immobilière en React. Création de composants, routage et gestion de données JSON.",
     stack: ["Hâte de collaborer avec vous !"],
-    image: "/img/cards/votreprojet.png",
-    modalimg: "/img/projet.png",
+    image: "/img/cards/votreprojet.webp",
+    modalimg: "/img/projet.webp",
     github: "https://github.com/tonrepo/kasa",
     demo: "https://kasa-demo.com",
   },

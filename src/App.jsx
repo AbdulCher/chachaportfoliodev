@@ -1,58 +1,37 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import LoaderScreen from "./animate/LoaderScreen";
 import Header from "./components/Header";
 import Home from "./sections/Home";
 import About from "./sections/About";
 import Works from "./sections/Works";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
-import { Canvas } from "@react-three/fiber";
-// import { useState, useEffect } from "react";
-//import LoaderScreen from "./animate/LoaderScreen";
-
-import ParticleBackground from "./components/ParticleBackground";
 import Footer from "./components/Footer";
 
-
 export default function App() {
-  // const [showLoader, setShowLoader] = useState(true);
-  // const [fadeOut, setFadeOut] = useState(false);
+  const [done, setDone] = useState(false);
 
-  // useEffect(() => {
-  //   // Le loader reste 2 secondes
-  //   const timer = setTimeout(() => {
-  //     setFadeOut(true); // lance l'animation opacity-0
-  //   }, 2000);
-
-  //   // Après fade-out (700ms), on retire du DOM
-  //   const removeTimer = setTimeout(() => {
-  //     setShowLoader(false);
-  //   }, 2700);
-
-  //   return () => {
-  //     clearTimeout(timer);
-  //     clearTimeout(removeTimer);
-  //   };
-  // }, []);
+  useEffect(() => {
+    // Affiche le loader juste 1 seconde, mais sans bloquer l'affichage réel
+    const timer = setTimeout(() => setDone(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-      {/* {showLoader && <LoaderScreen fadeOut={fadeOut} />} */}
+      <LoaderScreen done={done} />
 
-      {/* -- Ta vraie page en dessous -- */}
       <main>
-        
         <div className="relative scroll-smooth snap-y snap-mandatory h-screen overflow-scroll">
-            <Header />
-            <Home />
-            <About />
-            <Works />
-            <Skills />
-            <Contact />
-         <Footer />
+          <Header />
+          <Home />
+          <About />
+          <Works />
+          <Skills />
+          <Contact />
+          <Footer />
         </div>
-        
       </main>
     </>
   );
 }
-
