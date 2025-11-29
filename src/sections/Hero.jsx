@@ -1,12 +1,22 @@
-// ============================================
-// sections/Hero.js - AMÉLIORÉ
-// ============================================
+// sections/Hero.js
+import { useEffect } from "react";
 import profileImage from "../../img/profile.webp";
 import BgChacha from "../animate/BgChacha";
 import Icons from "../components/Icons";
 import ParticleNetwork from "../animate/ParticleNetwork";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Hero() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,  // durée des animations
+      once: false,     // permet de répéter l'animation au scroll
+      offset: 200,     // déclenchement à 200px du viewport
+    });
+    AOS.refresh();      // refresh pour détecter tous les éléments dynamiques
+  }, []);
+
   return (
     <section
       id="accueil"
@@ -19,27 +29,23 @@ export default function Hero() {
       <ParticleNetwork />
 
       {/* Contenu principal : Texte + Image */}
-      <div className="w-full flex flex-col md:flex-row 
-            items-center justify-center gap-10 z-10">
-        
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-10 z-10">
+
         {/* Texte de présentation */}
         <article 
           className="flex-1 text-center md:text-left space-y-6"
-          data-aos="fade-down" 
+          data-aos="fade-down"
           data-aos-duration="1000"
         >
-          <h1 className="text-[#27818f] font-bold text-3xl md:text-4xl 
-                lg:text-5xl xl:text-6xl leading-tight">
+          <h1 className="text-[#27818f] font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
             DÉVELOPPEUR WEB
           </h1>
 
-          <h2 className="text-[#ece5dd] mt-4 text-lg md:text-xl 
-                xl:text-2xl lg:text-2xl font-semibold">
+          <h2 className="text-[#ece5dd] mt-4 text-lg md:text-xl xl:text-2xl lg:text-2xl font-semibold">
             Passionné par le Front-End & l'UX moderne
           </h2>
 
-          <p className="mt-6 text-[#ece5dd] max-w-xl text-base 
-                sm:text-lg md:text-xl mx-auto md:mx-0 leading-relaxed">
+          <p className="mt-6 text-[#ece5dd] max-w-xl text-base sm:text-lg md:text-xl mx-auto md:mx-0 leading-relaxed">
             J'aime créer des interfaces épurées, performantes et animées,
             tout en optimisant l'expérience utilisateur.
           </p>
@@ -52,8 +58,6 @@ export default function Hero() {
           data-aos-duration="1000"
           data-aos-delay="200"
           data-aos-offset="200"
-          data-aos-once="false"
-          data-aos-anchor-placement="top-center"
         >
           <img
             src={profileImage}
