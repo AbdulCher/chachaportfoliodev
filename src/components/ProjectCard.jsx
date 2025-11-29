@@ -1,6 +1,5 @@
-
 // ============================================
-// components/ProjectCard.js - AMÉLIORÉ
+// components/ProjectCard.js - IMAGES CORRIGÉES
 // ============================================
 export default function ProjectCard({ project, onOpen }) {
   return (
@@ -9,7 +8,8 @@ export default function ProjectCard({ project, onOpen }) {
       className="relative cursor-pointer overflow-hidden 
         rounded-xl shadow-lg group
         transform transition-all duration-300
-        hover:scale-105 hover:shadow-2xl"
+        hover:scale-105 hover:shadow-2xl
+        h-full flex flex-col" // ← Hauteur complète + flex
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -19,15 +19,17 @@ export default function ProjectCard({ project, onOpen }) {
       }}
       aria-label={`Voir les détails du projet ${project.title}`}
     >
-      {/* Image */}
-      <img
-        src={project.image}
-        alt={`Aperçu du projet ${project.title}`}
-        loading="lazy"
-        className="w-full h-64 object-cover 
-          border-2 border-[#27818f]/30
-          group-hover:scale-110 transition-transform duration-500"
-      />
+      {/* Container image avec ratio fixe */}
+      <div className="relative w-full pt-[60%] overflow-hidden">
+        <img
+          src={project.image}
+          alt={`Aperçu du projet ${project.title}`}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover
+            border-2 border-[#27818f]/30
+            group-hover:scale-110 transition-transform duration-500"
+        />
+      </div>
 
       {/* Overlay au hover */}
       <div className="absolute inset-0 
@@ -37,12 +39,12 @@ export default function ProjectCard({ project, onOpen }) {
         flex flex-col items-center justify-center
         text-[#ece5dd] p-6">
         
-        <h3 className="text-2xl font-bold mb-2 text-center">
+        <h3 className="text-xl md:text-2xl font-bold mb-2 text-center">
           {project.title}
         </h3>
         
         {project.stack && (
-          <p className="text-base font-medium opacity-90 text-center">
+          <p className="text-sm md:text-base font-medium opacity-90 text-center">
             {Array.isArray(project.stack) 
               ? project.stack.join(" • ") 
               : project.stack}

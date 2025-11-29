@@ -1,5 +1,5 @@
 // ============================================
-// sections/Works.js - AMÉLIORÉ
+// sections/Works.js - GRILLE RESPONSIVE CORRIGÉE
 // ============================================
 import { useState } from "react";
 import projects from "../data/projects";
@@ -29,8 +29,9 @@ export default function Works() {
         Mes Projets
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 
-        xl:grid-cols-3 gap-6 w-full max-w-7xl z-10 mb-10">
+      {/* GRILLE CORRIGÉE : 1 col mobile, 2 cols tablette/desktop */}
+      <div className="grid grid-cols-1 md:grid-cols-2 
+        gap-6 md:gap-8 w-full max-w-6xl z-10 mb-10">
         {projects.map((project, index) => (
           <div
             key={project.id}

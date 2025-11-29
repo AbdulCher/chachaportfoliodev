@@ -1,6 +1,6 @@
 // sections/Hero.js
 import { useEffect } from "react";
-import profileImage from "../../public/img/profile.webp";
+import profileImage from "/public/img/profile.webp";
 import BgChacha from "../animate/BgChacha";
 import Icons from "../components/Icons";
 import ParticleNetwork from "../animate/ParticleNetwork";

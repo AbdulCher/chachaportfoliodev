@@ -8,7 +8,7 @@ const projects = [
     fonctionnalités: "Barre de recherche statique, filtres visuels non fonctionnels et cartes d’hébergement et d’activité adaptables selon la taille d’écran.",
     acquis: "Structuration de page web en HTML sémantique, utilisation Flexbox et Grid pour le responsive et géstion des medias queries de manière efficace.",
     stack: ["HTML", "CSS", "Figma"],
-    image: "/img/cards/homebooki.webp",
+    image: "/img/homebooki.webp",
     modalimg: "/img/booki.webp",
     github: "https://github.com/tonrepo/booki",
     
@@ -23,7 +23,7 @@ const projects = [
     fonctionnalités: "Affichage dynamique des travaux, ouverture et fermeture d’une modale avec gestion des événements, ajout d’une photo via formulaire avec aperçu avant envoi et suppression d’un média côté front-end",
     acquis: "Manipulation du DOM de manière dynamique, destion des requêtes asynchrones avec fetch et await et Structuration de en plusieurs fichiers JS (index, login, modal, etc.).",
     stack: ["HTML", "CSS", "JavaScript"],
-    image: "/img/cards/homesophie.webp",
+    image: "/img/homesophie.webp",
     modalimg: "/img/sophiebluel.webp",
     github: "https://github.com/tonrepo/sophiebluel",
     
@@ -37,7 +37,7 @@ const projects = [
     fonctionnalités: " Carrousel d’images interactif, système de collapses pour les descriptions et équipements, gestion des routes dynamiques (/accommodation/:id) et page 404 personnalisée.",
     acquis: " Créeation et réutilisation des composants React, géstion de l’état local et des props entre composants et séparation de la logique (carrousel, détails, etc.) pour un code maintenable.",
     stack: ["React", "Vite", "CSS Modules"],
-    image: "/img/cards/homekasa.webp",
+    image: "/img/homekasa.webp",
     modalimg: "/img/kasa.webp",
     github: "https://github.com/tonrepo/kasa",
     demo: "https://kasa-demo.com",
@@ -48,7 +48,7 @@ const projects = [
     description:
       "Refonte complète d’un site de location immobilière en React. Création de composants, routage et gestion de données JSON.",
     stack: ["Hâte de collaborer avec vous !"],
-    image: "/img/cards/votreprojet.webp",
+    image: "/img/votreprojet.webp",
     modalimg: "/img/projet.webp",
     github: "https://github.com/tonrepo/kasa",
     demo: "https://kasa-demo.com",
