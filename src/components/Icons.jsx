@@ -1,9 +1,7 @@
 // ============================================
 // components/Icons.js - AMÉLIORÉ
 // ============================================
-// utils/icons.js - Centralisez vos icônes
 import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaTwitter } from "react-icons/fa";
-
 
 export default function Icons() {
   const icons = [

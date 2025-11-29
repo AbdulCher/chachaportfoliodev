@@ -1,3 +1,4 @@
+
 // ============================================
 // components/ProjectCard.js - AMÉLIORÉ
 // ============================================
@@ -30,7 +31,7 @@ export default function ProjectCard({ project, onOpen }) {
 
       {/* Overlay au hover */}
       <div className="absolute inset-0 
-        bg-gradient-to-top from-[#001524] via-[#001524]/90 to-transparent
+        bg-gradient-to-t from-[#001524] via-[#001524]/90 to-transparent
         opacity-0 group-hover:opacity-100 
         transition-opacity duration-300
         flex flex-col items-center justify-center

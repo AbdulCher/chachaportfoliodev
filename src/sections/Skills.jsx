@@ -1,34 +1,10 @@
-import { useEffect, useRef } from "react";
+// ============================================
+// sections/Skills.js - AMÉLIORÉ
+// ============================================
 import BgPortfolio from "../animate/BgPortfolio";
 import Icons from "../components/Icons";
 
-function useReveal() {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("show");
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    observer.observe(el);
-
-    return () => observer.disconnect();
-  }, []);
-
-  return ref;
-}
-
 export default function Skills() {
-  const sectionRef = useReveal();
-
   const skills = {
     Outils: [
       { name: "Figma", icon: "/img/icons/figma.svg" },
@@ -51,52 +27,62 @@ export default function Skills() {
   return (
     <section
       id="competences"
-      ref={sectionRef}
       className="min-h-screen flex flex-col justify-center px-8 py-24
         snap-start w-full relative
         bg-[#001524] text-[#ece5dd]
         items-center
-        md:px-12 lg:px-20
-      "
+        md:px-12 lg:px-20"
+      aria-labelledby="skills-title"
     >
-      <h2 className="text-[#ece5dd] mb-8 text-xl md:text-2xl xl:text-3xl lg:text-4xl font-semibold">
+      <h2 
+        id="skills-title"
+        className="text-[#ece5dd] mb-12 text-2xl md:text-3xl 
+          xl:text-4xl lg:text-5xl font-semibold"
+        data-aos="fade-down"
+      >
         Compétences
       </h2>
 
-      <div className="relative w-full max-w-6xl grid gap-12 mb-12 sm:grid-cols-1 lg:grid-cols-3 text-center">
+      <div className="relative w-full max-w-6xl grid gap-12 mb-12 
+        sm:grid-cols-1 lg:grid-cols-3 z-10">
         {Object.entries(skills).map(([category, items], idx) => (
-          <div key={idx} className="flex flex-col items-center"
-          data-aos="fade-right"
-            data-aos-delay={idx * 150} // <-- delay progressif
-            data-aos-offset="200"       // Décalage du déclenchement
-            data-aos-once="false"       // Répéter l'animation
-            data-aos-anchor-placement="center" // Point d'ancrage
+          <article 
+            key={category} 
+            className="flex flex-col items-center"
+            data-aos="fade-up"
+            data-aos-delay={idx * 150}
+            data-aos-duration="800"
           >
-            <h3 className="text-2xl opacity-90 font-semibold text-[#ff7d00] mb-6">
+            <h3 className="text-2xl font-semibold text-[#ff7d00] mb-6">
               {category}
             </h3>
 
-            <ul className="space-y-6">
+            <ul className="space-y-6 w-full">
               {items.map((item, i) => (
                 <li
-                  key={i}
-                  className="flex items-center justify-center space-x-4 opacity-0 fade-slide-up"
-                  style={{ animationDelay: `${i * 250}ms` }}
+                  key={item.name}
+                  className="flex items-center justify-center space-x-4
+                    bg-[#001524]/40 backdrop-blur-sm p-4 rounded-lg
+                    border border-[#27818f]/30
+                    hover:border-[#ff7d00]/50 hover:shadow-lg 
+                    hover:shadow-[#ffecd1]/20
+                    transition-all duration-300"
+                  data-aos="zoom-in"
+                  data-aos-delay={idx * 150 + i * 100}
                 >
                   <img
                     src={item.icon}
-                    className="w-10 h-10 fade-scale"
-                    style={{ animationDelay: `${i * 250}ms` }}
-                    alt={item.name}
+                    className="w-10 h-10 object-contain"
+                    alt={`Icône ${item.name}`}
+                    loading="lazy"
                   />
-
-                  <span className="text-xl text-[#ece5dd] opacity-90">
+                  <span className="text-lg text-[#ece5dd] font-medium">
                     {item.name}
                   </span>
                 </li>
               ))}
             </ul>
-          </div>
+          </article>
         ))}
       </div>
 
