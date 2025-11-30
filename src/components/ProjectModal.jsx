@@ -73,14 +73,32 @@ export default function ProjectModal({ project, onClose }) {
             </h2>
 
             <p className="text-[#ece5dd] text-base md:text-lg 
-              mb-6 leading-relaxed opacity-90">
+              mb-4 leading-relaxed opacity-90">
               {project.description}
             </p>
+
+            {project.fonctionnalités && (
+              <div className="bg-[#001524]/40 rounded-lg">
+                <h3 className="text-xl font-semibold text-[#ff7d00]">
+                  Fonctionnalités
+                </h3>
+                <p className="text-[#ece5dd] opacity-90">{project.fonctionnalités}</p>
+              </div>
+            )}
+
+            {project.acquis && (
+              <div className="bg-[#001524]/40 rounded-lg border-[#27818f]/30">
+                <h3 className="text-xl font-semibold text-[#ff7d00] mt-4">
+                  Acquis
+                </h3>
+                <p className="text-[#ece5dd] opacity-90">{project.acquis}</p>
+              </div>
+            )}
 
             {/* Technologies */}
             {project.stack && (
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-[#ff7d00] mb-3">
+                <h3 className="text-xl font-semibold text-[#ff7d00] mt-4 mb-3">
                   Technologies utilisées
                 </h3>
                 <div className="flex flex-wrap gap-2">

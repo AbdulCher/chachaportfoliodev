@@ -1,5 +1,5 @@
 // ============================================
-// sections/Works.js - GRILLE RESPONSIVE CORRIGÉE
+// sections/Works.js - GRILLE RESPONSIVE FINALE
 // ============================================
 import { useState } from "react";
 import projects from "../data/projects";
@@ -29,7 +29,7 @@ export default function Works() {
         Mes Projets
       </h2>
 
-      {/* GRILLE CORRIGÉE : 1 col mobile, 2 cols tablette/desktop */}
+      {/* GRILLE PARFAITE : 1 col mobile, 2 cols tablette+ */}
       <div className="grid grid-cols-1 md:grid-cols-2 
         gap-6 md:gap-8 w-full max-w-6xl z-10 mb-10">
         {projects.map((project, index) => (

@@ -16,14 +16,11 @@ const projects = [
   {
     id: 2,
     title: "Sophie Bluel",
-    description:
-      "Développement d’un portfolio d’architecte avec gestion dynamique des galeries et modales via JavaScript.",
-    objectif: 
-      "Création d'une galérie photo alimentée par une API, gestion d'un systéme de connexion administrateur avec token et ajouter et supprimer des médias via une modale dynamique",
+    description: "Développement d’un portfolio d’architecte avec gestion dynamique des galeries et modales via JavaScript.",
     fonctionnalités: "Affichage dynamique des travaux, ouverture et fermeture d’une modale avec gestion des événements, ajout d’une photo via formulaire avec aperçu avant envoi et suppression d’un média côté front-end",
     acquis: "Manipulation du DOM de manière dynamique, destion des requêtes asynchrones avec fetch et await et Structuration de en plusieurs fichiers JS (index, login, modal, etc.).",
     stack: ["HTML", "CSS", "JavaScript"],
-    image: "/img/homesophie.webp",
+    image: "/img/homesophiebluel.webp",
     modalimg: "/img/sophiebluel.webp",
     github: "https://github.com/tonrepo/sophiebluel",
     
@@ -46,12 +43,13 @@ const projects = [
     id: 4,
     title: "Votre Projet Ici",
     description:
-      "Refonte complète d’un site de location immobilière en React. Création de composants, routage et gestion de données JSON.",
+      "Avec ma formation Openclasseroom, j'ai apris à utliser plusieurs langages et framework differents pour réaliser des App et sites que vous pouvez voir à la section compétences.",
+    fonctionnalités: "A vous de voir ce que vous aimeriez que je réalise pour votre projet, le chois est large.",
+    acquis: "Votre projet ici bientôt!!!.",
     stack: ["Hâte de collaborer avec vous !"],
-    image: "/img/votreprojet.webp",
+    image: "/img/homeprojet.webp",
     modalimg: "/img/projet.webp",
-    github: "https://github.com/tonrepo/kasa",
-    demo: "https://kasa-demo.com",
+    github: "https://github.com/tonrepo/kasa"
   },
 ];
 
