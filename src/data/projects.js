@@ -10,8 +10,7 @@ const projects = [
     stack: ["HTML", "CSS", "Figma"],
     image: "/img/homebooki.webp",
     modalimg: "/img/booki.webp",
-    github: "https://github.com/tonrepo/booki",
-    
+    github: "https://github.com/AbdulCher/P3-Booki",
   },
   {
     id: 2,
@@ -22,8 +21,7 @@ const projects = [
     stack: ["HTML", "CSS", "JavaScript"],
     image: "/img/homesophiebluel.webp",
     modalimg: "/img/sophiebluel.webp",
-    github: "https://github.com/tonrepo/sophiebluel",
-    
+    github: "https://github.com/AbdulCher/Portfolio-architecte-sophie-bluel",
   },
   {
     id: 3,
@@ -36,8 +34,7 @@ const projects = [
     stack: ["React", "Vite", "CSS Modules"],
     image: "/img/homekasa.webp",
     modalimg: "/img/kasa.webp",
-    github: "https://github.com/tonrepo/kasa",
-    demo: "https://kasa-demo.com",
+    github: "https://github.com/AbdulCher/kasa-app",
   },
   {
     id: 4,
@@ -49,7 +46,7 @@ const projects = [
     stack: ["Hâte de collaborer avec vous !"],
     image: "/img/homeprojet.webp",
     modalimg: "/img/projet.webp",
-    github: "https://github.com/tonrepo/kasa"
+    github: "https://github.com/AbdulCher/chachaportfoliodev"
   },
 ];
 
