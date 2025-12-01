@@ -72,8 +72,10 @@ export default function Contact() {
           data-aos="fade-up"
           data-aos-delay="200"
         >
+          {/* onSubmit={handleSubmit} */}
           {!sent ? (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form action="https://formspree.io/f/mrbnkzop"
+              method="POST" className="flex flex-col gap-5">
               <div>
                 <label 
                   htmlFor="name" 
