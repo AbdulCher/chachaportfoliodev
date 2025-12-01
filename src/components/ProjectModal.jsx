@@ -34,19 +34,19 @@ export default function ProjectModal({ project, onClose }) {
       <div
         onClick={(e) => e.stopPropagation()}
         className="bg-[#001524] border-[#ff7d00] border-2 sm:border-3 md:border-4
-sm:p-6
-rounded-lg sm:rounded-xl 
+          sm:p-6
+          rounded-lg sm:rounded-xl 
           p-6 md:p-8 max-w-5xl w-full 
           relative shadow-2xl
-          max-h-[90vh] overflow-hidden
+          max-h-[90vh] overflow-y-auto xl:overflow-hidden
           animate-scaleIn"
       >
         {/* Bouton fermer */}
         <button
           onClick={onClose}
-          className="absolute top-0 right-1 
+          className="absolute top-0 right-1
             text-[#ece5dd] hover:text-[#ff7d00]
-            text-4xl font-bold
+            text-xl font-bold
             'transition-colors' duration-300
             hover:rotate-90 transform transition-transform"
           aria-label="Fermer la modal"
