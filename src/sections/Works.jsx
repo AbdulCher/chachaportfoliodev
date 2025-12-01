@@ -7,6 +7,7 @@ import ProjectCard from "../components/ProjectCard";
 import ProjectModal from "../components/ProjectModal";
 import Icons from "../components/Icons";
 import BgChacha from "../animate/BgChacha";
+import ParticleNetwork from "../animate/ParticleNetwork";
 
 export default function Works() {
   const [modalProject, setModalProject] = useState(null);
@@ -20,6 +21,9 @@ export default function Works() {
         md:px-12 lg:px-20"
       aria-labelledby="projects-title"
     >
+      {/* Background animé */}
+      <ParticleNetwork />
+
       <h2 
         id="projects-title"
         className="text-[#ece5dd] text-2xl mb-14

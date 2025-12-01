@@ -1,6 +1,6 @@
 // sections/Hero.js
 import { useEffect } from "react";
-import profileImage from "../../public/img/profile.webp";
+import profileImage from "../assets/profile.webp";
 import BgChacha from "../animate/BgChacha";
 import Icons from "../components/Icons";
 import ParticleNetwork from "../animate/ParticleNetwork";
@@ -63,8 +63,8 @@ export default function Hero() {
             src={profileImage}
             alt="Photo de profil du développeur web"
             className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 
-              object-cover rounded-full shadow-2xl border-4 border-[#ff7d00]
-              hover:scale-105 transition-transform duration-300"
+              object-cover rounded-full shadow-2xl border-[#ff7d00]
+              hover:scale-105 transition-transform duration-300 border-2 sm:border-3 md:border-4"
             loading="eager"
           />
         </figure>

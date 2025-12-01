@@ -6,6 +6,26 @@ body {
   font-family: 'Inter', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 }
 
+/* Fix viewport mobile */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Empêche le zoom sur double-tap mobile */
+* {
+  touch-action: manipulation;
+}
+/* Cacher la scrollbar mais garder le scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE et Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

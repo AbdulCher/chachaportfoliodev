@@ -121,7 +121,7 @@ export default function ParticleNetwork({
           if (dist < 150) {
             ctx.beginPath();
             ctx.strokeStyle = mouseLineColor;
-            ctx.lineWidth = 5; //largeur Particules
+            ctx.lineWidth = 3; //largeur Particules
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();

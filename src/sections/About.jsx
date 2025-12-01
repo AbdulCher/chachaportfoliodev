@@ -37,8 +37,8 @@ export default function About() {
         >
           <h2 
             id="about-title"
-            className="text-[#ece5dd] text-2xl md:text-3xl 
-              xl:text-4xl lg:text-5xl font-semibold"
+            className="text-[#ece5dd] text-xl md:text-2xl lg:text-3xl 
+              xl:text-4xl font-semibold"
           >
             À propos de <span className="text-[#ff7d00]">ChaChaDev</span>
           </h2>

@@ -29,6 +29,26 @@ export default function App() {
     };
   }, []);
 
+  // FIX ROTATION MOBILE
+  useEffect(() => {
+    const handleResize = () => {
+      // Force un reflow pour corriger les dimensions
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    };
+
+    // Au chargement
+    handleResize();
+
+    // À chaque resize/rotation
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
+  }, []);
+
   // Initialiser AOS
   useAOSInit({
     once: false,
@@ -42,7 +62,7 @@ export default function App() {
       {showLoader && <LoaderScreen fadeOut={fadeOut} />}
 
       {/* Contenu principal */}
-      <div className="relative">
+      <div className="relative overflow-x-hidden  // Empêche le scroll horizontal">
         <Header />
         <MainPage />
         <Footer />

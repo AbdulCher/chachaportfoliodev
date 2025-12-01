@@ -59,11 +59,11 @@ function Header() {
         <a 
           href="#accueil" 
           onClick={closeMenu}
-          className="text-2xl text-[#ff7d00] font-bold border-t-8
+          className="text-[#ff7d00] font-bold border-t-3 md:border-t-4 lg:border-t-6 text-xl md:text-2xl lg:text-2xl
             hover:scale-110 transition-transform duration-300 z-50"
           aria-label="Retour à l'accueil"
         >
-          <span className="text-3xl">@</span>/////
+          <span className="">@/////</span>
         </a>
 
         <button
@@ -77,7 +77,7 @@ function Header() {
         </button>
 
         {/* MENU DESKTOP */}
-        <ul className="hidden lg:flex space-x-6 text-lg">
+        <ul className="hidden lg:flex space-x-6 text-md md:text-xl lg:text-2xl">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
