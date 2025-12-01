@@ -1,7 +1,7 @@
 // ============================================
 // components/Icons.js - AMÉLIORÉ
 // ============================================
-import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Icons() {
   const icons = [
@@ -20,16 +20,16 @@ export default function Icons() {
       link: "mailto:abdul13un@gmail.com",
       label: "Email"
     },
-    { 
-      icon: <FaInstagram />, 
-      link: "https://instagram.com",
-      label: "Instagram"
-    },
-    { 
-      icon: <FaTwitter />, 
-      link: "https://twitter.com",
-      label: "Twitter"
-    },
+    // { 
+    //   icon: <FaInstagram />, 
+    //   link: "https://instagram.com",
+    //   label: "Instagram"
+    // },
+    // { 
+    //   icon: <FaTwitter />, 
+    //   link: "https://twitter.com",
+    //   label: "Twitter"
+    // },
   ];
 
   return (
