@@ -44,7 +44,7 @@ export default function ProjectModal({ project, onClose }) {
         {/* Bouton fermer */}
         <button
           onClick={onClose}
-          className="absolute top-0 right-1
+          className="absolute top-0 right-2 md:text-2xl
             text-[#ece5dd] hover:text-[#ff7d00]
             text-xl font-bold
             'transition-colors' duration-300

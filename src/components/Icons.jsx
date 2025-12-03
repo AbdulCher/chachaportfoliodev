@@ -1,7 +1,7 @@
 // ============================================
 // components/Icons.js - AMÉLIORÉ
 // ============================================
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope /*FaInstagram, FaTwitter*/ } from "react-icons/fa";
 
 export default function Icons() {
   const icons = [

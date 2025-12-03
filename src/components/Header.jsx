@@ -59,7 +59,7 @@ function Header() {
         <a 
           href="#accueil" 
           onClick={closeMenu}
-          className="text-[#ff7d00] font-bold border-t-3 md:border-t-4 lg:border-t-6 text-xl md:text-2xl lg:text-2xl
+          className="text-[#ff7d00] font-bold border-t-3 md:border-t-4 lg:border-t-6 text-md md:text-2xl lg:text-2xl
             hover:scale-110 transition-transform duration-300 z-50"
           aria-label="Retour à l'accueil"
         >
@@ -68,7 +68,7 @@ function Header() {
 
         <button
           onClick={toggleMenu}
-          className="lg:hidden text-[#ff7d00] text-3xl z-50 
+          className="lg:hidden text-[#ff7d00] text-xl md:text-4xl xl:text-3xl z-50 
             hover:scale-110 transition-transform relative"
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={open}
@@ -82,7 +82,7 @@ function Header() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[#ff7d00] rounded-lg px-3 py-2 
+                className="text-[#ff7d00] text-2xl rounded-lg px-3 py-2 
                   hover:text-[#001524] hover:bg-[#ff7d00]
                   transition-all duration-300
                   font-medium"
@@ -116,7 +116,7 @@ function Header() {
                 <a
                   href={link.href}
                   onClick={closeMenu}
-                  className="block text-center text-[#ff7d00] text-2xl font-semibold
+                  className="block text-center text-[#ff7d00] text-xl md:text-2xl font-semibold
                     py-4 px-6 rounded-lg
                     hover:bg-[#ff7d00] hover:text-[#001524]
                     transition-all duration-300
