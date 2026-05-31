@@ -1,2 +1,9 @@
 @import "tailwindcss";
 
+@keyframes slidemouse {
+  0% { transform: translateX(0); opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { transform: translateX(500px); opacity: 0; }
+}
+

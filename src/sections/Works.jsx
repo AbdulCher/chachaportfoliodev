@@ -15,7 +15,7 @@ export default function Works() {
   return (
     <section
       id="projets"
-      className="min-h-screen flex flex-col justify-center px-8 py-24
+      className="min-h-screen flex flex-col justify-center px-8 py-40
         snap-start w-full relative
         bg-[#001524] text-[#ece5dd] items-center
         md:px-12 lg:px-20"

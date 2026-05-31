@@ -44,7 +44,7 @@ export default function Contact() {
       className="relative snap-start min-h-screen
         bg-[#001524] text-[#ece5dd]
         flex flex-col items-center 
-        justify-center px-8 lg:px-20 py-24"
+        justify-center px-8 lg:px-20 py-40"
       aria-labelledby="contact-title"
     >
       <ParticleNetwork />

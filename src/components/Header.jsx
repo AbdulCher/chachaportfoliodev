@@ -3,11 +3,11 @@ import { useState, useEffect, memo, useCallback } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const navLinks = [
-  { href: "#accueil", label: "Accueil" },
-  { href: "#apropos", label: "À propos" },
-  { href: "#projets", label: "Projets" },
-  { href: "#competences", label: "Compétences" },
-  { href: "#contact", label: "Contact" },
+  { href: "#accueil", label: "ACCUEIL" },
+  { href: "#apropos", label: "À PROPOS" },
+  { href: "#projets", label: "PROJETS" },
+  { href: "#competences", label: "COMPÉTENCES" },
+  { href: "#contact", label: "CONTACT" },
 ];
 
 function Header() {
@@ -55,44 +55,51 @@ function Header() {
           : "bg-[#001524]/80 backdrop-blur-md border-b border-transparent"
         }`}
     >
-      <nav className="max-w-7xl mx-auto flex justify-between items-center p-4">
-        <a 
-          href="#accueil" 
-          onClick={closeMenu}
-          className="text-[#ff7d00] font-bold border-t-3 md:border-t-4 lg:border-t-6 text-md md:text-2xl lg:text-2xl
-            hover:scale-110 transition-transform duration-300 z-50"
-          aria-label="Retour à l'accueil"
-        >
-          <span className="">@/////</span>
-        </a>
+      <nav className="max-w-7xl mx-auto flex justify-between items-stretch px-6">
+  
+  <a 
+    href="#accueil" 
+    onClick={closeMenu}
+    className="hover:scale-110 transition-transform duration-300 z-50 flex items-center"
+    aria-label="Retour à l'accueil"
+  >
+    <img src="/img/chachalogo.png" alt="Logo"className="h-30 p-2 w-auto" />
+  </a>
 
-        <button
-          onClick={toggleMenu}
-          className="lg:hidden text-[#ff7d00] text-xl md:text-4xl xl:text-3xl z-50 
-            hover:scale-110 transition-transform relative"
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-          aria-expanded={open}
-        >
-          {open ? <FiX /> : <FiMenu />}
-        </button>
-
-        {/* MENU DESKTOP */}
-        <ul className="hidden lg:flex space-x-6 text-md md:text-xl lg:text-2xl">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-[#ff7d00] text-2xl rounded-lg px-3 py-2 
-                  hover:text-[#001524] hover:bg-[#ff7d00]
-                  transition-all duration-300
-                  font-medium"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+  <button
+    onClick={toggleMenu}
+    className="lg:hidden text-[#ff7d00] text-2xl z-50 hover:scale-110 transition-transform flex items-center"
+    aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+    aria-expanded={open}
+  >
+    {open ? <FiX /> : <FiMenu />}
+  </button>
+<div className="hidden lg:flex items-end gap-2 relative">
+  {/* Boule lumineuse */}
+  <div
+    className="absolute top-10 h-1 rounded-full bg-[#ff7d00]"
+    style={{
+      width: '20px',
+      boxShadow: '0 0 8px #ff7d00, 0 0 16px #ff7d00',
+      animation: 'slideball 3s linear infinite',
+    }}
+  />
+  <ul className="hidden lg:flex items-end gap-2">
+  {navLinks.map((link, index) => (
+    <li key={link.href} className={index % 2 === 0 ? 'mb-8' : 'mb-8'}>
+      <a
+        href={link.href}
+        className="text-[#319eaf] m-4 bg-[#2c4456] bold text-xl rounded-lg px-8 p-2
+          hover:text-[#ffffff] hover:bg-[#ff7d00]
+          transition-all duration-300 font-medium"
+      >
+        {link.label}
+      </a>
+    </li>
+  ))}
+</ul>
+</div>
+</nav>
 
       {/* MENU MOBILE AMÉLIORÉ */}
       <div

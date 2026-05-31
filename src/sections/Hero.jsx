@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section
       id="accueil"
-      className="min-h-screen flex flex-col justify-center px-8 py-24
+      className="min-h-screen flex flex-col justify-center px-8 py-46
         snap-start w-full relative bg-[#001524] text-[#ece5dd] 
         items-center md:px-12 lg:px-20"
       aria-label="Section d'accueil"
