@@ -58,31 +58,31 @@ function Header() {
       <nav className="max-w-7xl mx-auto flex justify-between items-stretch px-6">
   
   <a 
-    href="#accueil" 
-    onClick={closeMenu}
-    className="hover:scale-110 transition-transform duration-300 z-50 flex items-center"
-    aria-label="Retour à l'accueil"
-  >
-    <img src="/img/chachalogo.png" alt="Logo"className="h-30 p-2 w-auto" />
-  </a>
+  href="#accueil" 
+  onClick={closeMenu}
+  className="hover:scale-110 transition-transform duration-300 z-50 flex items-center"
+  aria-label="Retour à l'accueil"
+>
+  <img src="/img/chachalogo.png" alt="Logo" className="h-16 md:h-20 lg:h-24 xl:h-28 p-2 w-auto" />
+</a>
 
   <button
-    onClick={toggleMenu}
-    className="lg:hidden text-[#ff7d00] text-2xl z-50 hover:scale-110 transition-transform flex items-center"
-    aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-    aria-expanded={open}
-  >
-    {open ? <FiX /> : <FiMenu />}
-  </button>
+  onClick={toggleMenu}
+  className="lg:hidden text-[#ff7d00] text-2xl md:text-4xl z-50 hover:scale-110 transition-transform flex items-center"
+  aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+  aria-expanded={open}
+>
+  {open ? <FiX /> : <FiMenu />}
+</button>
 <div className="hidden lg:flex items-end gap-2 relative">
   {/* Boule lumineuse */}
   <div
-    className="absolute top-10 h-1 rounded-full bg-[#ff7d00]"
+    className="absolute top-8 h-1 rounded-full bg-[#ff7d00]"
     style={{
-      width: '20px',
-      boxShadow: '0 0 8px #ff7d00, 0 0 16px #ff7d00',
-      animation: 'slideball 3s linear infinite',
-    }}
+  width: '30px',
+  boxShadow: '0 0 8px #ff7d00, 0 0 20px #ff7d00',
+  animation: 'slideball 2s ease-in-out infinite',
+}}
   />
   <ul className="hidden lg:flex items-end gap-2">
   {navLinks.map((link, index) => (
